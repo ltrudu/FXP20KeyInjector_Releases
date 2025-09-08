@@ -6,4 +6,5 @@
 Please, before using the tool, read the [documentation](https://github.com/ltrudu/FXP20KeyInjector_Releases/blob/master/FXP20KeyInjector-HowTo.docx)
 
 This tool is released under the [Zebra EULA](https://github.com/ltrudu/FXP20KeyInjector_Releases/blob/master/EULA.txt)
+
 Please, take the time to read the EULA before using this tool.
