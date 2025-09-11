@@ -7,7 +7,7 @@ Welcome to the comprehensive documentation for **FXP20 Key Injector** - a powerf
 ## 🗺️ Documentation Navigation
 
 ### 🚀 Getting Started
-- **[Installation Guide](Installation)** - Complete installation and setup instructions
+- **[Installation Guide](Installation.md)** - Complete installation and setup instructions
 - **[Quick Start](Quick-Start)** - Get up and running in minutes
 - **[Prerequisites](Prerequisites)** - System requirements and hardware compatibility
 
