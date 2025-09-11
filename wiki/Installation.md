@@ -37,8 +37,7 @@ If you don't have .NET Framework 4.8 installed:
 
 ### Step 4: First Launch
 1. Right-click on `FXP20KeyInjector.exe`
-2. Select **"Run as Administrator"** (recommended for first run)
-3. The application will create a default `Config.xml` file
+2. The application will create a default `Config.xml` file if it doesn't exist
 
 ---
 
@@ -49,10 +48,6 @@ If you don't have .NET Framework 4.8 installed:
    - Connect your FX device to the PC via USB cable
    - Wait for Windows to install device drivers
    - The device should appear as a COM port
-
-2. **Network Connection**:
-   - Ensure both PC and FX device are on the same network
-   - Configure the device's IP address in the application
 
 ### Verify Connection
 1. Launch FXP20KeyInjector
