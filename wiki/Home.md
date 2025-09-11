@@ -8,33 +8,33 @@ Welcome to the comprehensive documentation for **FXP20 Key Injector** - a powerf
 
 ### 🚀 Getting Started
 - **[Installation Guide](Installation.md)** - Complete installation and setup instructions
-- **[Quick Start](Quick-Start)** - Get up and running in minutes
-- **[Prerequisites](Prerequisites)** - System requirements and hardware compatibility
+- **[Quick Start](Quick-Start.md)** - Get up and running in minutes
+- **[Prerequisites](Prerequisites.md)** - System requirements and hardware compatibility
 
 ### 🔧 Configuration & Setup  
-- **[Setup & Connection](Setup)** - Device connection and basic configuration
-- **[Configuration Guide](Configuration)** - Complete Config.xml reference
-- **[Auto-Startup Configuration](Auto-Startup)** - Automatic startup options
+- **[Setup & Connection](Setup.md)** - Device connection and basic configuration
+- **[Configuration Guide](Configuration.md)** - Complete Config.xml reference
+- **[Auto-Startup Configuration](Auto-Startup.md)** - Automatic startup options
 
 ### 🖥️ User Interface
-- **[User Interface Guide](User-Interface)** - Complete GUI walkthrough
-- **[Send Protocols](Send-Protocols)** - Keyboard injection, clipboard paste, and MQTT
+- **[User Interface Guide](User-Interface.md)** - Complete GUI walkthrough
+- **[Send Protocols](Send-Protocols.md)** - Keyboard injection, clipboard paste, and MQTT
 
 ### 🌐 Advanced Features
-- **[MQTT Integration](MQTT)** - Enterprise messaging integration
-- **[GPIO Control](GPIO)** - Hardware button integration
-- **[Antenna Configuration](Antenna-Configuration)** - Advanced RF settings
+- **[MQTT Integration](MQTT.md)** - Enterprise messaging integration
+- **[GPIO Control](GPIO.md)** - Hardware button integration
+- **[Antenna Configuration](Antenna-Configuration.md)** - Advanced RF settings
 
 ### 📖 Reference Materials
-- **[Config.xml Reference](Config-Reference)** - Complete configuration file documentation  
-- **[ASCII Character Codes](ASCII-Codes)** - Character reference for keyboard hooks
-- **[Transmit Power Index](Power-Index)** - RF power level reference
-- **[Mosquitto MQTT Setup](Mosquitto-Setup)** - MQTT broker installation guide
+- **[Config.xml Reference](Config-Reference.md)** - Complete configuration file documentation  
+- **[ASCII Character Codes](ASCII-Codes.md)** - Character reference for keyboard hooks
+- **[Transmit Power Index](Power-Index.md)** - RF power level reference
+- **[Mosquitto MQTT Setup](Mosquitto-Setup.md)** - MQTT broker installation guide
 
 ### 🔧 Support & Troubleshooting
-- **[Troubleshooting](Troubleshooting)** - Common issues and solutions
-- **[FAQ](FAQ)** - Frequently asked questions
-- **[Support](Support)** - Getting help and reporting issues
+- **[Troubleshooting](Troubleshooting.md)** - Common issues and solutions
+- **[FAQ](FAQ.md)** - Frequently asked questions
+- **[Support](Support.md)** - Getting help and reporting issues
 
 ---
 
