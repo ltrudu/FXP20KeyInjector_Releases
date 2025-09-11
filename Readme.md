@@ -140,4 +140,6 @@ This software is licensed under the **Zebra End User License Agreement (EULA)**.
 
 ---
 
-*📞 For Zebra hardware support, contact Zebra Technologies directly. For application issues, use this repository's Issues section.*
+## 📞 For Zebra hardware support, contact Zebra Technologies directly. 
+
+## ⚠️ For application issues, use this repository's Issues section. ⚠️
