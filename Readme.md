@@ -30,17 +30,17 @@
 ## 📖 Documentation
 
 ### 📚 Main Documentation
-- **[📋 Complete Documentation Wiki](https://github.com/ltrudu/FXP20KeyInjector_Releases/wiki/Home.md)** - Comprehensive user guide and reference
+- **[📋 Complete Documentation Wiki](https://github.com/ltrudu/FXP20KeyInjector_Releases/blob/master/wiki/Home.md)** - Comprehensive user guide and reference
 - **[📄 Detailed PDF Manual](https://github.com/ltrudu/FXP20KeyInjector_Releases/blob/master/FXP20KeyInjector-HowTo.pdf)** - Complete technical documentation
 
 ### Quick Links
 
-- 🚀 **[Installation Guide](https://github.com/ltrudu/FXP20KeyInjector_Releases/wiki/Installation)**
-- ⚙️ **[Configuration Guide](https://github.com/ltrudu/FXP20KeyInjector_Releases/wiki/Configuration)**
-- 🖥️ **[User Interface Guide](https://github.com/ltrudu/FXP20KeyInjector_Releases/wiki/User-Interface)**
-- 🛠️ **[Setup & Connection](https://github.com/ltrudu/FXP20KeyInjector_Releases/wiki/Setup)**
-- 🌐 **[MQTT Integration](https://github.com/ltrudu/FXP20KeyInjector_Releases/wiki/MQTT)**
-- 🔧 **[Troubleshooting](https://github.com/ltrudu/FXP20KeyInjector_Releases/wiki/Troubleshooting)**
+- 🚀 **[Installation Guide](https://github.com/ltrudu/FXP20KeyInjector_Releases/wiki/Installation.md)**
+- ⚙️ **[Configuration Guide](https://github.com/ltrudu/FXP20KeyInjector_Releases/wiki/Configuration.md)**
+- 🖥️ **[User Interface Guide](https://github.com/ltrudu/FXP20KeyInjector_Releases/wiki/User-Interface.md)**
+- 🛠️ **[Setup & Connection](https://github.com/ltrudu/FXP20KeyInjector_Releases/wiki/Setup.md)**
+- 🌐 **[MQTT Integration](https://github.com/ltrudu/FXP20KeyInjector_Releases/wiki/MQTT.md)**
+- 🔧 **[Troubleshooting](https://github.com/ltrudu/FXP20KeyInjector_Releases/wiki/Troubleshooting.md)**
 
 ---
 
@@ -116,7 +116,7 @@ This software is licensed under the **Zebra End User License Agreement (EULA)**.
 ## 🤝 Support & Contributing
 
 ### Getting Help
-1. 📖 Check the [Wiki](https://github.com/ltrudu/FXP20KeyInjector_Releases/wiki/Home.md)
+1. 📖 Check the [Wiki](https://github.com/ltrudu/FXP20KeyInjector_Releases/blob/master/wiki/Home.md)
 2. 🔍 Search existing [Issues](https://github.com/ltrudu/FXP20KeyInjector_Releases/issues)
 3. 🆕 Create a new issue with detailed information
 
