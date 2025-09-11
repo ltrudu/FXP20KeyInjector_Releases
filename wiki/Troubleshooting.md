@@ -544,7 +544,7 @@ mosquitto_sub -h localhost -t test
 ## 🆘 Getting Additional Help
 
 ### Self-Service Resources
-1. **📚 [Documentation Wiki](Home)** - Complete user guides
+1. **📚 [Documentation Wiki](Home.md)** - Complete user guides
 2. **📄 [PDF Manual](https://github.com/ltrudu/FXP20KeyInjector_Releases/blob/master/FXP20KeyInjector-HowTo.pdf)** - Detailed technical documentation
 3. **🔍 [GitHub Issues](https://github.com/ltrudu/FXP20KeyInjector_Releases/issues)** - Search existing issues
 
@@ -613,4 +613,4 @@ When creating a new issue, include:
 
 ---
 
-*Still having issues? Create a [new issue](https://github.com/ltrudu/FXP20KeyInjector_Releases/issues/new) with detailed information or return to [Home](Home).*
+*Still having issues? Create a [new issue](https://github.com/ltrudu/FXP20KeyInjector_Releases/issues/new) with detailed information or return to [Home](Home.md).*

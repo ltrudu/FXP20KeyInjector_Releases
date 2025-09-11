@@ -145,4 +145,4 @@ If you encounter issues during installation:
 
 ---
 
-*Need help? Check our [Support Guide](Support) or visit the [main documentation](Home).*
+*Need help? Check our [Support Guide](Support.md) or visit the [main documentation](Home.md).*

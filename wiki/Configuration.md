@@ -285,7 +285,7 @@ The Config.xml file contains detailed antenna configuration for each antenna por
 - 📡 **RFMode_Tari**: Tag response timing (≥0)
 - 📊 **RFMode_TableIndex**: RF mode (0, 1, 2, or 3)
 - 📶 **ReceiveSensitivityIndex**: Reception sensitivity (0)
-- ⚡ **TransmitPowerIndex**: Power level (0-170, see [Power Index](Power-Index))
+- ⚡ **TransmitPowerIndex**: Power level (0-170, see [Power Index](Power-Index.md))
 
 #### Advanced Settings
 - 🏷️ **SingulationControl_Session**: Session type (SESSION_S1, S2, S3, S4)
@@ -338,13 +338,13 @@ The Config.xml file contains detailed antenna configuration for each antenna por
 
 ## 🔗 Related Topics
 
-- **[User Interface Guide](User-Interface)** - GUI configuration options
-- **[Setup Guide](Setup)** - Initial device setup
-- **[MQTT Integration](MQTT)** - Detailed MQTT configuration
-- **[Auto-Startup Guide](Auto-Startup)** - Windows startup configuration
-- **[Power Index Reference](Power-Index)** - RF power level details
-- **[ASCII Codes](ASCII-Codes)** - Keyboard hook key codes
+- **[User Interface Guide](User-Interface.md)** - GUI configuration options
+- **[Setup Guide](Setup.md)** - Initial device setup
+- **[MQTT Integration](MQTT.md)** - Detailed MQTT configuration
+- **[Auto-Startup Guide](Auto-Startup.md)** - Windows startup configuration
+- **[Power Index Reference](Power-Index.md)** - RF power level details
+- **[ASCII Codes](ASCII-Codes.md)** - Keyboard hook key codes
 
 ---
 
-*Need help with configuration? Check [Troubleshooting](Troubleshooting) or return to [Home](Home).*
+*Need help with configuration? Check [Troubleshooting](Troubleshooting.md) or return to [Home](Home.md).*

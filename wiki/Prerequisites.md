@@ -45,19 +45,14 @@ If .NET Framework 4.8 is not installed:
 3. **🔄 Restart** computer when prompted
 4. **✅ Verify** installation using registry check above
 
-### Visual C++ Redistributables
-Usually installed automatically, but may be needed:
-- **Microsoft Visual C++ 2019 Redistributable** (x64/x86)
-- **Microsoft Visual C++ 2015 Redistributable** (x64/x86)
-
 ---
 
 ## 📱 Hardware Requirements
 
 ### Supported Zebra Devices
 Primary support for **Zebra FXP20** series:
-- ✅ **FXP20 Handheld RFID Reader**
-- ✅ **FXP20-x variants** (different antenna configurations)
+- ✅ **FXP20 RFID Reader**
+
 
 ### Zebra Device Specifications
 - **📡 Frequency**: 860-960 MHz (UHF RFID)
@@ -96,7 +91,6 @@ Only required if using MQTT protocol:
 ## 🛡️ Security Requirements
 
 ### User Permissions
-- **👤 Administrator Rights**: Recommended for installation and COM port access
 - **📝 File Permissions**: Read/write access to installation directory
 - **🔌 Device Access**: Permission to access serial/COM ports
 
@@ -160,7 +154,7 @@ If planning to modify configurations extensively:
 - **🚫 Virtual Machines**: USB passthrough may cause issues
 
 ### Hardware Incompatibilities
-- **🚫 Non-Zebra Devices**: Only Zebra FX-series supported
+- **🚫 Non-Zebra Devices**: Only Zebra FXP20 supported
 - **🚫 Generic RFID Readers**: Protocol incompatibility
 - **🚫 USB 1.1**: May not provide sufficient power
 - **🚫 Bluetooth Connections**: Not supported (USB only)

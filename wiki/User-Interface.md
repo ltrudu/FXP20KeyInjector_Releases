@@ -275,4 +275,4 @@ The FXP20 Key Injector interface is organized into several logical sections for 
 
 ---
 
-*Having UI issues? Check our [Troubleshooting Guide](Troubleshooting.md) or return to [Home](Home).*
+*Having UI issues? Check our [Troubleshooting Guide](Troubleshooting.md) or return to [Home](Home.md).*

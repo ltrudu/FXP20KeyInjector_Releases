@@ -410,10 +410,10 @@ await client.ConnectAsync(options);
 
 ## 🔗 Related Topics
 
-- **[Configuration Guide](Configuration)** - Detailed Config.xml settings
-- **[Setup Guide](Setup)** - Basic setup and connection
-- **[Troubleshooting](Troubleshooting)** - MQTT-specific troubleshooting
-- **[User Interface Guide](User-Interface)** - GUI protocol selection
+- **[Configuration Guide](Configuration.md)** - Detailed Config.xml settings
+- **[Setup Guide](Setup.md)** - Basic setup and connection
+- **[Troubleshooting](Troubleshooting.md)** - MQTT-specific troubleshooting
+- **[User Interface Guide](User-Interface.md)** - GUI protocol selection
 
 ---
 
@@ -431,4 +431,4 @@ await client.ConnectAsync(options);
 
 ---
 
-*Need MQTT help? Check our [Troubleshooting Guide](Troubleshooting) or return to [Home](Home).*
+*Need MQTT help? Check our [Troubleshooting Guide](Troubleshooting.md) or return to [Home](Home.md).*

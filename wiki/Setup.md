@@ -256,12 +256,12 @@ For production environments:
 
 ## 🔗 Related Topics
 
-- **[Installation Guide](Installation)** - Installing the application
-- **[Configuration Guide](Configuration)** - Detailed Config.xml reference
-- **[User Interface Guide](User-Interface)** - Complete GUI walkthrough
-- **[MQTT Integration](MQTT)** - Setting up MQTT mode
-- **[Troubleshooting](Troubleshooting)** - Common setup issues
+- **[Installation Guide](Installation.md)** - Installing the application
+- **[Configuration Guide](Configuration.md)** - Detailed Config.xml reference
+- **[User Interface Guide](User-Interface.md)** - Complete GUI walkthrough
+- **[MQTT Integration](MQTT.md)** - Setting up MQTT mode
+- **[Troubleshooting](Troubleshooting.md)** - Common setup issues
 
 ---
 
-*Having setup issues? Check our [Troubleshooting Guide](Troubleshooting) or return to [Home](Home).*
+*Having setup issues? Check our [Troubleshooting Guide](Troubleshooting.md) or return to [Home](Home.md).*
