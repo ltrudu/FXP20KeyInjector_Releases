@@ -34,7 +34,7 @@ FXP20 Key Injector supports three methods for delivering tag data to application
 ```xml
 <Protocol>CLIPBOARDPASTE</Protocol>
 <ClipboardPasteDelay>100</ClipboardPasteDelay>  <!-- Milliseconds before paste -->
-<WindowFilter>Target Application</WindowFilter>   <!-- Application to receive data -->
+<TargetWindowFilter>Target Application</TargetWindowFilter>   <!-- Application to receive data -->
 ```
 
 ### Best Practices
@@ -68,8 +68,7 @@ FXP20 Key Injector supports three methods for delivering tag data to application
 ### Configuration
 ```xml
 <Protocol>KEYINJECTION</Protocol>
-<KeyInjectionDelay>10</KeyInjectionDelay>       <!-- Milliseconds between characters -->
-<WindowFilter>Target Application</WindowFilter>  <!-- Application to receive keystrokes -->
+<TargetWindowFilter>Target Application</TargetWindowFilter>  <!-- Application to receive keystrokes -->
 <AddCR>true</AddCR>                              <!-- Add carriage return -->
 <AddLF>false</AddLF>                             <!-- Add line feed -->
 ```
@@ -78,10 +77,8 @@ FXP20 Key Injector supports three methods for delivering tag data to application
 ```xml
 <!-- Data formatting settings -->
 <AddCSVSeparator>false</AddCSVSeparator>         <!-- Add comma separator -->
-<CSVSeparator>,</CSVSeparator>                   <!-- Custom separator -->
 <AddCR>true</AddCR>                              <!-- Carriage return (Enter) -->
 <AddLF>false</AddLF>                             <!-- Line feed -->
-<AddTab>false</AddTab>                           <!-- Tab character -->
 ```
 
 ### Best Practices
@@ -93,16 +90,8 @@ FXP20 Key Injector supports three methods for delivering tag data to application
 ### Troubleshooting
 - **🔤 Missing Characters**: Increase `KeyInjectionDelay`
 - **⏱️ Too Slow**: Reduce delay but test thoroughly
-- **📝 Wrong Format**: Adjust CR/LF/Tab settings
+- **📝 Wrong Format**: Adjust CR/LF settings
 - **🎯 Lost Focus**: Check window management
-
-### Advanced Key Injection
-```xml
-<!-- Advanced keyboard settings -->
-<SendModifierKeys>true</SendModifierKeys>        <!-- Enable Ctrl, Alt, Shift -->
-<KeyPressTimeout>1000</KeyPressTimeout>          <!-- Max time per character -->
-<RetryFailedKeys>3</RetryFailedKeys>             <!-- Retry count for failed keys -->
-```
 
 ---
 
@@ -133,14 +122,8 @@ FXP20 Key Injector supports three methods for delivering tag data to application
 
 ### Message Format
 Published messages contain:
-```json
-{
-  "timestamp": "2025-09-11T10:30:45Z",
-  "device_id": "FXP20_001",
-  "epc": "E20000123456789012345678",
-  "rssi": -45,
-  "antenna": 1
-}
+```text
+The EPC read as a payload
 ```
 
 ### Best Practices
@@ -198,20 +181,12 @@ Published messages contain:
 <!-- Clipboard paste configuration -->
 <Protocol>CLIPBOARDPASTE</Protocol>
 <ClipboardPasteDelay>100</ClipboardPasteDelay>
-<RestoreClipboard>true</RestoreClipboard>        <!-- Restore original clipboard -->
-<ConfirmPaste>false</ConfirmPaste>               <!-- Disable paste confirmation -->
-<MaxPasteLength>1000</MaxPasteLength>            <!-- Limit paste data length -->
 ```
 
 ### Keyboard Injection Settings
 ```xml
 <!-- Keyboard injection configuration -->
 <Protocol>KEYINJECTION</Protocol>
-<KeyInjectionDelay>10</KeyInjectionDelay>
-<CharacterTimeout>100</CharacterTimeout>         <!-- Timeout per character -->
-<SkipNonPrintable>false</SkipNonPrintable>      <!-- Skip control characters -->
-<ConvertToUpper>false</ConvertToUpper>           <!-- Convert to uppercase -->
-<ConvertToLower>false</ConvertToLower>           <!-- Convert to lowercase -->
 ```
 
 ### MQTT Settings
@@ -224,10 +199,6 @@ Published messages contain:
 <MQTTPassword>password123</MQTTPassword>
 <MQTTSendTopic>warehouse/reader1/tags</MQTTSendTopic>
 <MQTTControlTopic>warehouse/reader1/control</MQTTControlTopic>
-<MQTTKeepAlive>60</MQTTKeepAlive>               <!-- Keep-alive interval -->
-<MQTTReconnect>true</MQTTReconnect>             <!-- Auto-reconnect -->
-<MQTTRetain>false</MQTTRetain>                  <!-- Retain messages -->
-<MQTTQOS>1</MQTTQOS>                            <!-- Quality of Service -->
 ```
 
 ---
@@ -318,34 +289,9 @@ clip < test.txt  # Put text in clipboard
 
 ---
 
-## 📚 Advanced Protocol Features
-
-### Protocol Switching
-```xml
-<!-- Dynamic protocol switching -->
-<AutoSelectProtocol>true</AutoSelectProtocol>
-<ProtocolFallback>CLIPBOARDPASTE</ProtocolFallback>
-<ProtocolRetries>3</ProtocolRetries>
-```
-
-### Data Transformation
-```xml
-<!-- Data formatting options -->
-<DataPrefix>RFID:</DataPrefix>                   <!-- Add prefix to data -->
-<DataSuffix>\n</DataSuffix>                     <!-- Add suffix to data -->
-<DataTransform>UPPERCASE</DataTransform>         <!-- Transform case -->
-<RemoveSpaces>true</RemoveSpaces>               <!-- Remove whitespace -->
-<ReplaceChars>true</ReplaceChars>               <!-- Character replacement -->
-```
-
 ### Error Handling
 ```xml
-<!-- Protocol error handling -->
-<RetryOnError>true</RetryOnError>
-<MaxRetries>3</MaxRetries>
-<RetryDelay>1000</RetryDelay>
-<FailoverProtocol>CLIPBOARDPASTE</FailoverProtocol>
-<LogErrors>true</LogErrors>
+<!-- Check GUI status indicators for connection and protocol errors -->
 ```
 
 ---

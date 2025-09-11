@@ -38,7 +38,7 @@ Add these settings to your `Config.xml` file:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
-<FXP20KeyInjectorConfig>
+<Configuration>
   <!-- Auto-Startup Settings -->
   <AutoConnect>true</AutoConnect>
   <AutoStartReading>true</AutoStartReading>
@@ -48,13 +48,12 @@ Add these settings to your `Config.xml` file:
   <BaudRate>921600</BaudRate>
   
   <!-- Target Application -->
-  <WindowFilter>Your Target Application</WindowFilter>
+  <TargetWindowFilter>Your Target Application</TargetWindowFilter>
   <Protocol>CLIPBOARDPASTE</Protocol>
   
-  <!-- Optional: Minimize to system tray -->
+  <!-- Optional: Start minimized -->
   <StartMinimized>true</StartMinimized>
-  <MinimizeToTray>true</MinimizeToTray>
-</FXP20KeyInjectorConfig>
+</Configuration>
 ```
 
 ---
@@ -66,36 +65,16 @@ Add these settings to your `Config.xml` file:
 #### Add to User Startup
 1. **⌨️ Press** Windows + R
 2. **📝 Type** `shell:startup` and press Enter
-3. **📂 Copy** FXP20KeyInjector.exe to this folder
+3. **📂 Create a shortcut to** FXP20KeyInjector.exe in this folder
 4. **🔄 Restart** Windows to test
 
 #### Add to System Startup (All Users)
 1. **⌨️ Press** Windows + R  
 2. **📝 Type** `shell:common startup` and press Enter
 3. **👤 Run** as Administrator if prompted
-4. **📂 Copy** FXP20KeyInjector.exe to this folder
+4. **📂 Create a shortcut to** FXP20KeyInjector.exe in this folder
 
-### Option 2: Registry Startup Entry (Advanced)
-
-#### Create Registry Entry
-```batch
-:: Run as Administrator
-reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run" /v "FXP20KeyInjector" /t REG_SZ /d "C:\Program Files\FXP20KeyInjector\FXP20KeyInjector.exe"
-
-:: For all users (requires admin)
-reg add "HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Run" /v "FXP20KeyInjector" /t REG_SZ /d "C:\Program Files\FXP20KeyInjector\FXP20KeyInjector.exe"
-```
-
-#### Remove Registry Entry
-```batch
-:: Remove user startup
-reg delete "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run" /v "FXP20KeyInjector"
-
-:: Remove system startup (requires admin)
-reg delete "HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Run" /v "FXP20KeyInjector"
-```
-
-### Option 3: Task Scheduler (Most Reliable)
+### Option 2: Task Scheduler (Most Reliable)
 
 #### Create Scheduled Task
 1. **🔍 Open** Task Scheduler (`taskschd.msc`)
@@ -112,51 +91,11 @@ reg delete "HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Run" /v
 #### Advanced Task Settings
 ```xml
 <!-- Task Scheduler XML configuration -->
-<Arguments>/autostart</Arguments>
 <WorkingDirectory>C:\Program Files\FXP20KeyInjector</WorkingDirectory>
 <Priority>4</Priority>
 <RunLevel>HighestAvailable</RunLevel>
 <RestartCount>3</RestartCount>
 <RestartInterval>PT10M</RestartInterval>
-```
-
----
-
-## 🛡️ Service Installation (Enterprise)
-
-### Option 4: Windows Service (Advanced Users)
-
-For maximum reliability, install as a Windows service:
-
-#### Service Wrapper Setup
-1. **📥 Download** NSSM (Non-Sucking Service Manager)
-2. **📂 Extract** to system PATH location
-3. **👤 Open** Command Prompt as Administrator
-4. **⚙️ Configure** service:
-
-```batch
-:: Install service
-nssm install FXP20KeyInjector "C:\Program Files\FXP20KeyInjector\FXP20KeyInjector.exe"
-
-:: Configure service
-nssm set FXP20KeyInjector Start SERVICE_AUTO_START
-nssm set FXP20KeyInjector ObjectName LocalSystem
-nssm set FXP20KeyInjector Type SERVICE_WIN32_OWN_PROCESS
-
-:: Start service
-nssm start FXP20KeyInjector
-```
-
-#### Service Management
-```batch
-:: Check service status
-sc query FXP20KeyInjector
-
-:: Stop service
-nssm stop FXP20KeyInjector
-
-:: Remove service
-nssm remove FXP20KeyInjector confirm
 ```
 
 ---
@@ -169,58 +108,39 @@ nssm remove FXP20KeyInjector confirm
 ```xml
 <!-- Automatic connection settings -->
 <AutoConnect>true</AutoConnect>
-<AutoConnectDelay>5000</AutoConnectDelay>  <!-- Wait 5 seconds before connecting -->
 <ComPort>COM5</ComPort>                     <!-- Specify exact COM port -->
 <BaudRate>921600</BaudRate>
-<ConnectionTimeout>10000</ConnectionTimeout>
 ```
 
 #### Reading Automation
 ```xml
 <!-- Automatic reading settings -->
 <AutoStartReading>true</AutoStartReading>
-<AutoStartDelay>2000</AutoStartDelay>      <!-- Wait 2 seconds after connection -->
-<ContinuousReading>true</ContinuousReading>
-<RemoveDuplicates>true</RemoveDuplicates>   <!-- Filter duplicate tags -->
 ```
 
 #### Application Integration
 ```xml
 <!-- Target application settings -->
-<WindowFilter>Inventory Management System</WindowFilter>
+<TargetWindowFilter>Inventory Management System</TargetWindowFilter>
 <Protocol>CLIPBOARDPASTE</Protocol>        <!-- Fastest data delivery -->
-<WaitForWindow>true</WaitForWindow>         <!-- Wait for target window -->
-<WindowWaitTimeout>30000</WindowWaitTimeout> <!-- Wait up to 30 seconds -->
+<ClipboardPasteDelay>500</ClipboardPasteDelay>
 ```
 
 #### User Interface Settings
 ```xml
 <!-- UI behavior for automatic startup -->
 <StartMinimized>true</StartMinimized>       <!-- Start minimized -->
-<MinimizeToTray>true</MinimizeToTray>       <!-- Hide in system tray -->
-<ShowNotifications>false</ShowNotifications> <!-- Disable popup notifications -->
-<SilentMode>true</SilentMode>               <!-- Suppress non-critical dialogs -->
-```
-
-### Advanced Configuration Options
-
-#### Retry and Error Handling
-```xml
-<!-- Connection retry settings -->
-<ConnectionRetries>5</ConnectionRetries>
-<RetryDelay>10000</RetryDelay>             <!-- 10 seconds between retries -->
-<ReconnectOnError>true</ReconnectOnError>
-<MaxReconnectAttempts>10</MaxReconnectAttempts>
 ```
 
 #### GPIO and Hardware Settings
 ```xml
 <!-- Hardware trigger settings -->
-<HookGPIOToStartReading>true</HookGPIOToStartReading>
-<GPIOReadingDurationInMs>5000</GPIOReadingDurationInMs>
-<GPIOPin>1</GPIOPin>
+<PerformReadingWithGPIO>true</PerformReadingWithGPIO>
+<PerformReadingDuration>5000</PerformReadingDuration>
+<PerformReadingGPIOPort>1</PerformReadingGPIOPort>
 <BeepOnRead>true</BeepOnRead>
-<BeepDuration>200</BeepDuration>
+<nbBeeps>1</nbBeeps>
+<beepSleepTime>400</beepSleepTime>
 ```
 
 ---
@@ -259,9 +179,6 @@ nssm remove FXP20KeyInjector confirm
 ```batch
 :: Check startup programs
 wmic startup get caption,command,location,user
-
-:: Monitor service startup
-sc query FXP20KeyInjector
 
 :: Check event logs
 eventvwr.msc
@@ -308,15 +225,6 @@ eventvwr.msc
 - **🔄 Test** recovery procedures
 - **📝 Update** documentation
 
-#### Configuration Backup
-```batch
-:: Backup configuration
-copy "C:\Program Files\FXP20KeyInjector\Config.xml" "C:\Backup\FXP20-Config-Backup.xml"
-
-:: Restore configuration
-copy "C:\Backup\FXP20-Config-Backup.xml" "C:\Program Files\FXP20KeyInjector\Config.xml"
-```
-
 #### Update Procedures
 1. **💾 Backup** current configuration
 2. **⏹️ Stop** auto-startup service/task
@@ -338,21 +246,16 @@ copy "C:\Backup\FXP20-Config-Backup.xml" "C:\Program Files\FXP20KeyInjector\Conf
 - **📊 Check** Windows Event Viewer for errors
 
 #### Connection Fails on Startup
-- **⏱️ Increase** auto-connect delay
 - **🔌 Verify** device is connected before Windows starts
 - **⚙️ Check** COM port settings
-- **🔄 Add** retry logic to configuration
 
 #### Target Application Issues
-- **⏱️ Increase** window wait timeout
 - **🎯 Verify** window filter text
 - **📋 Test** with simple application like Notepad
-- **🔄 Add** startup delay for target application
 
 ### Performance Issues
 
 #### Slow Startup
-- **⏱️ Optimize** delay settings
 - **🚀 Use** Task Scheduler with priority settings
 - **💾 Consider** SSD storage for faster boot times
 - **📊 Monitor** system resource usage

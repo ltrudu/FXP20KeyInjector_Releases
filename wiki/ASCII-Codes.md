@@ -43,22 +43,22 @@ This reference provides ASCII character codes for configuring keyboard hooks, sp
 #### Space and Punctuation (32-47)
 | Code | Hex | Char | Description | Usage in Config |
 |------|-----|------|-------------|-----------------|
-| **32** | 0x20 | ` ` | Space | `<FieldSeparator> </FieldSeparator>` |
-| **33** | 0x21 | `!` | Exclamation | `<DataPrefix>!</DataPrefix>` |
-| **34** | 0x22 | `"` | Quote | `<CSVQuoteChar>"</CSVQuoteChar>` |
-| **35** | 0x23 | `#` | Hash | `<DataPrefix>#</DataPrefix>` |
-| **36** | 0x24 | `$` | Dollar | `<DataPrefix>$</DataPrefix>` |
+| **32** | 0x20 | ` ` | Space | Used in data content |
+| **33** | 0x21 | `!` | Exclamation | Used in data content |
+| **34** | 0x22 | `"` | Quote | Used in data content |
+| **35** | 0x23 | `#` | Hash | Used in data content |
+| **36** | 0x24 | `$` | Dollar | Used in data content |
 | **37** | 0x25 | `%` | Percent | Field placeholder |
 | **38** | 0x26 | `&` | Ampersand | Data connector |
-| **39** | 0x27 | `'` | Apostrophe | `<CSVQuoteChar>'</CSVQuoteChar>` |
+| **39** | 0x27 | `'` | Apostrophe | Used in data content |
 | **40** | 0x28 | `(` | Left Parenthesis | Data grouping |
 | **41** | 0x29 | `)` | Right Parenthesis | Data grouping |
 | **42** | 0x2A | `*` | Asterisk | Wildcard |
 | **43** | 0x2B | `+` | Plus | Data concatenation |
-| **44** | 0x2C | `,` | Comma | `<CSVSeparator>,</CSVSeparator>` |
-| **45** | 0x2D | `-` | Hyphen/Minus | `<FieldSeparator>-</FieldSeparator>` |
-| **46** | 0x2E | `.` | Period | `<FieldSeparator>.</FieldSeparator>` |
-| **47** | 0x2F | `/` | Forward Slash | `<FieldSeparator>/</FieldSeparator>` |
+| **44** | 0x2C | `,` | Comma | Used with `<AddCSVSeparator>true</AddCSVSeparator>` |
+| **45** | 0x2D | `-` | Hyphen/Minus | Used in data content |
+| **46** | 0x2E | `.` | Period | Used in data content |
+| **47** | 0x2F | `/` | Forward Slash | Used in data content |
 
 #### Numbers (48-57)
 | Code | Hex | Char | Description |
@@ -107,47 +107,46 @@ This reference provides ASCII character codes for configuring keyboard hooks, sp
 ### Function Keys (F1-F12)
 | Key | Virtual Code | Config Usage | Description |
 |-----|--------------|--------------|-------------|
-| **F1** | VK_F1 | `<StartReadingKey>F1</StartReadingKey>` | Function 1 |
-| **F2** | VK_F2 | `<StopReadingKey>F2</StopReadingKey>` | Function 2 |
-| **F3** | VK_F3 | `<BeepKey>F3</BeepKey>` | Function 3 |
-| **F4** | VK_F4 | `<StartReadingKey>F4</StartReadingKey>` | Function 4 |
-| **F5** | VK_F5 | `<StartReadingKey>F5</StartReadingKey>` | Function 5 |
-| **F6** | VK_F6 | `<StartReadingKey>F6</StartReadingKey>` | Function 6 |
-| **F7** | VK_F7 | `<StartReadingKey>F7</StartReadingKey>` | Function 7 |
-| **F8** | VK_F8 | `<StartReadingKey>F8</StartReadingKey>` | Function 8 |
-| **F9** | VK_F9 | `<StartReadingKey>F9</StartReadingKey>` | Function 9 |
-| **F10** | VK_F10 | `<StartReadingKey>F10</StartReadingKey>` | Function 10 |
-| **F11** | VK_F11 | `<StartReadingKey>F11</StartReadingKey>` | Function 11 |
-| **F12** | VK_F12 | `<StartReadingKey>F12</StartReadingKey>` | Function 12 |
+| **F1** | 112 | `<HookKeyboardKey>112</HookKeyboardKey>` | Function 1 |
+| **F2** | 113 | `<HookKeyboardKey>113</HookKeyboardKey>` | Function 2 |
+| **F3** | 114 | `<HookKeyboardKey>114</HookKeyboardKey>` | Function 3 |
+| **F4** | 115 | `<HookKeyboardKey>115</HookKeyboardKey>` | Function 4 |
+| **F5** | 116 | `<HookKeyboardKey>116</HookKeyboardKey>` | Function 5 |
+| **F6** | 117 | `<HookKeyboardKey>117</HookKeyboardKey>` | Function 6 |
+| **F7** | 118 | `<HookKeyboardKey>118</HookKeyboardKey>` | Function 7 |
+| **F8** | 119 | `<HookKeyboardKey>119</HookKeyboardKey>` | Function 8 |
+| **F9** | 120 | `<HookKeyboardKey>120</HookKeyboardKey>` | Function 9 |
+| **F10** | 121 | `<HookKeyboardKey>121</HookKeyboardKey>` | Function 10 |
+| **F11** | 122 | `<HookKeyboardKey>122</HookKeyboardKey>` | Function 11 |
+| **F12** | 123 | `<HookKeyboardKey>123</HookKeyboardKey>` | Function 12 (default) |
 
 ### Navigation Keys
 | Key | Virtual Code | Config Usage | Description |
 |-----|--------------|--------------|-------------|
-| **Home** | VK_HOME | `<StartReadingKey>Home</StartReadingKey>` | Home key |
-| **End** | VK_END | `<StopReadingKey>End</StopReadingKey>` | End key |
-| **PageUp** | VK_PRIOR | `<StartReadingKey>PageUp</StartReadingKey>` | Page Up |
-| **PageDown** | VK_NEXT | `<StopReadingKey>PageDown</StopReadingKey>` | Page Down |
-| **Insert** | VK_INSERT | `<StartReadingKey>Insert</StartReadingKey>` | Insert key |
-| **Delete** | VK_DELETE | `<StopReadingKey>Delete</StopReadingKey>` | Delete key |
+| **Home** | 36 | `<HookKeyboardKey>36</HookKeyboardKey>` | Home key |
+| **End** | 35 | `<HookKeyboardKey>35</HookKeyboardKey>` | End key |
+| **PageUp** | 33 | `<HookKeyboardKey>33</HookKeyboardKey>` | Page Up |
+| **PageDown** | 34 | `<HookKeyboardKey>34</HookKeyboardKey>` | Page Down |
+| **Insert** | 45 | `<HookKeyboardKey>45</HookKeyboardKey>` | Insert key |
+| **Delete** | 46 | `<HookKeyboardKey>46</HookKeyboardKey>` | Delete key |
 
 ### Arrow Keys
 | Key | Virtual Code | Config Usage | Description |
 |-----|--------------|--------------|-------------|
-| **Up** | VK_UP | `<StartReadingKey>Up</StartReadingKey>` | Up arrow |
-| **Down** | VK_DOWN | `<StartReadingKey>Down</StartReadingKey>` | Down arrow |
-| **Left** | VK_LEFT | `<StartReadingKey>Left</StartReadingKey>` | Left arrow |
-| **Right** | VK_RIGHT | `<StartReadingKey>Right</StartReadingKey>` | Right arrow |
+| **Up** | 38 | `<HookKeyboardKey>38</HookKeyboardKey>` | Up arrow |
+| **Down** | 40 | `<HookKeyboardKey>40</HookKeyboardKey>` | Down arrow |
+| **Left** | 37 | `<HookKeyboardKey>37</HookKeyboardKey>` | Left arrow |
+| **Right** | 39 | `<HookKeyboardKey>39</HookKeyboardKey>` | Right arrow |
 
 ### Modifier Keys
 | Key | Virtual Code | Config Usage | Description |
 |-----|--------------|--------------|-------------|
-| **Ctrl** | VK_CONTROL | `<RequireCtrl>true</RequireCtrl>` | Control modifier |
-| **Alt** | VK_MENU | `<RequireAlt>true</RequireAlt>` | Alt modifier |
-| **Shift** | VK_SHIFT | `<RequireShift>true</RequireShift>` | Shift modifier |
-| **Space** | VK_SPACE | `<StartReadingKey>Space</StartReadingKey>` | Space bar |
-| **Enter** | VK_RETURN | `<StartReadingKey>Enter</StartReadingKey>` | Enter key |
-| **Tab** | VK_TAB | `<StartReadingKey>Tab</StartReadingKey>` | Tab key |
-| **Escape** | VK_ESCAPE | `<StopReadingKey>Escape</StopReadingKey>` | Escape key |
+| **Space** | 32 | `<HookKeyboardKey>32</HookKeyboardKey>` | Space bar |
+| **Enter** | 13 | `<HookKeyboardKey>13</HookKeyboardKey>` | Enter key |
+| **Tab** | 9 | `<HookKeyboardKey>9</HookKeyboardKey>` | Tab key |
+| **Escape** | 27 | `<HookKeyboardKey>27</HookKeyboardKey>` | Escape key |
+
+**Note**: Modifier keys (Ctrl, Alt, Shift) are not configurable
 
 ---
 
@@ -155,52 +154,20 @@ This reference provides ASCII character codes for configuring keyboard hooks, sp
 
 ### Keyboard Hook Configuration
 ```xml
-<!-- Function key triggers -->
+<!-- Function key triggers (only HookKeyboardKey is configurable) -->
 <HookKeyboardToStartReading>true</HookKeyboardToStartReading>
-<StartReadingKey>F1</StartReadingKey>              <!-- F1 to start -->
-<StopReadingKey>F2</StopReadingKey>               <!-- F2 to stop -->
-<BeepKey>F3</BeepKey>                             <!-- F3 to beep -->
+<HookKeyboardKey>112</HookKeyboardKey>             <!-- F1 key code -->
+<HookKeyboardReadingDurationInMs>5000</HookKeyboardReadingDurationInMs>
 
-<!-- Arrow key triggers -->
-<StartReadingKey>Down</StartReadingKey>            <!-- Down arrow to start -->
-<StopReadingKey>Up</StopReadingKey>               <!-- Up arrow to stop -->
-
-<!-- Space bar trigger -->
-<StartReadingKey>Space</StartReadingKey>           <!-- Space to start/stop -->
-
-<!-- Ctrl+Key combinations -->
-<UseModifierKeys>true</UseModifierKeys>
-<RequireCtrl>true</RequireCtrl>
-<StartReadingKey>S</StartReadingKey>               <!-- Ctrl+S to start -->
-<StopReadingKey>Q</StopReadingKey>                <!-- Ctrl+Q to stop -->
 ```
 
 ### Data Formatting with Special Characters
 ```xml
-<!-- Tab-separated data -->
-<FieldSeparator>&#9;</FieldSeparator>             <!-- Tab character (ASCII 9) -->
+<!-- Available formatting options -->
 <AddCR>true</AddCR>                               <!-- Carriage return (ASCII 13) -->
+<AddLF>false</AddLF>                              <!-- Line feed (ASCII 10) -->
+<AddCSVSeparator>true</AddCSVSeparator>           <!-- Add CSV separator -->
 
-<!-- Custom prefixes and suffixes -->
-<DataPrefix>TAG:</DataPrefix>                     <!-- Text prefix -->
-<DataSuffix>&#10;</DataSuffix>                   <!-- Line feed (ASCII 10) -->
-
-<!-- CSV with special characters -->
-<CSVSeparator>,</CSVSeparator>                   <!-- Comma separator -->
-<CSVQuoteChar>"</CSVQuoteChar>                   <!-- Double quote -->
-<CSVEscapeChar>\</CSVEscapeChar>                 <!-- Backslash escape -->
-```
-
-### Character Replacement
-```xml
-<!-- Replace spaces with underscores -->
-<ReplaceChars>true</ReplaceChars>
-<ReplaceFrom> </ReplaceFrom>                      <!-- Space (ASCII 32) -->
-<ReplaceTo>_</ReplaceTo>                         <!-- Underscore (ASCII 95) -->
-
-<!-- Remove control characters -->
-<ReplaceFrom>&#1;&#2;&#3;</ReplaceFrom>          <!-- Control chars 1,2,3 -->
-<ReplaceTo></ReplaceTo>                          <!-- Remove (empty replacement) -->
 ```
 
 ---
@@ -223,20 +190,20 @@ Use numeric references for control characters:
 
 | Character | ASCII | Numeric | Usage |
 |-----------|-------|---------|-------|
-| **Tab** | 9 | `&#9;` | `<FieldSeparator>&#9;</FieldSeparator>` |
-| **Line Feed** | 10 | `&#10;` | `<DataSuffix>&#10;</DataSuffix>` |
-| **Carriage Return** | 13 | `&#13;` | `<DataSuffix>&#13;</DataSuffix>` |
-| **Escape** | 27 | `&#27;` | `<DataPrefix>&#27;</DataPrefix>` |
+| **Tab** | 9 | `&#9;` | Tab character in data |
+| **Line Feed** | 10 | `&#10;` | Used with `<AddLF>true</AddLF>` |
+| **Carriage Return** | 13 | `&#13;` | Used with `<AddCR>true</AddCR>` |
+| **Escape** | 27 | `&#27;` | Escape character in data |
 
 ### Hexadecimal References
 Alternative hex format for special characters:
 
 | Character | ASCII | Hex | Usage |
 |-----------|-------|-----|-------|
-| **Tab** | 9 | `&#x9;` | `<FieldSeparator>&#x9;</FieldSeparator>` |
-| **Line Feed** | 10 | `&#xA;` | `<DataSuffix>&#xA;</DataSuffix>` |
-| **Carriage Return** | 13 | `&#xD;` | `<DataSuffix>&#xD;</DataSuffix>` |
-| **Space** | 32 | `&#x20;` | `<FieldSeparator>&#x20;</FieldSeparator>` |
+| **Tab** | 9 | `&#x9;` | Tab character in data |
+| **Line Feed** | 10 | `&#xA;` | Used with `<AddLF>true</AddLF>` |
+| **Carriage Return** | 13 | `&#xD;` | Used with `<AddCR>true</AddCR>` |
+| **Space** | 32 | `&#x20;` | Space character in data |
 
 ---
 
@@ -247,32 +214,25 @@ Alternative hex format for special characters:
 <!-- Optimized for text editors -->
 <AddCR>true</AddCR>                               <!-- Enter key -->
 <AddLF>false</AddLF>                             <!-- Windows line ending -->
-<FieldSeparator> </FieldSeparator>               <!-- Space separator -->
 ```
 
 ### Excel/Spreadsheet Applications
 ```xml
 <!-- Optimized for spreadsheets -->
-<CSVSeparator>,</CSVSeparator>                   <!-- Comma for CSV -->
+<AddCSVSeparator>true</AddCSVSeparator>          <!-- Add CSV separator -->
 <AddCR>true</AddCR>                              <!-- New row -->
-<DataPrefix></DataPrefix>                        <!-- No prefix needed -->
-<DataSuffix></DataSuffix>                        <!-- No suffix needed -->
 ```
 
 ### Database Applications
 ```xml
 <!-- Optimized for database entry -->
-<FieldSeparator>&#9;</FieldSeparator>            <!-- Tab to next field -->
 <AddCR>false</AddCR>                             <!-- No auto-enter -->
-<TrimWhitespace>true</TrimWhitespace>            <!-- Clean data -->
 ```
 
 ### Web Forms
 ```xml
 <!-- Optimized for web forms -->
-<FieldSeparator>&#9;</FieldSeparator>            <!-- Tab to next field -->
 <AddCR>false</AddCR>                             <!-- Manual form submission -->
-<ConvertToUpper>false</ConvertToUpper>           <!-- Preserve case -->
 ```
 
 ---
@@ -296,13 +256,6 @@ Alternative hex format for special characters:
 <TestString4>Quote"Test"Data</TestString4>       <!-- Quoted data -->
 ```
 
-### Debug Configuration
-```xml
-<!-- Debug character handling -->
-<ShowCharacterCodes>true</ShowCharacterCodes>     <!-- Display ASCII codes -->
-<LogCharacterSends>true</LogCharacterSends>       <!-- Log sent characters -->
-<HighlightSpecialChars>true</HighlightSpecialChars> <!-- Highlight control chars -->
-```
 
 ---
 

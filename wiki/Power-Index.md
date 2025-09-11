@@ -1,434 +1,255 @@
 # ⚡ Transmit Power Index Reference
 
-Complete reference guide for RF transmit power levels and optimization for Zebra FXP20 RFID performance.
+Complete reference guide for RF transmit power levels on the Zebra FXP20 RFID reader.
 
 ---
 
 ## 📡 Power Index Overview
 
-The Zebra FXP20 transmit power is controlled by a **Power Index** value ranging from **0 to 30**. Each index corresponds to a specific RF output power level that affects:
+The Zebra FXP20 transmit power is controlled by the **TransmitPowerIndex** parameter ranging from **0 to 170**. Each index corresponds to a specific power value as defined by the official Zebra documentation.
 
-- **📏 Read Range**: Distance at which tags can be detected
-- **📊 Tag Sensitivity**: Ability to read difficult or damaged tags  
-- **🔋 Battery Life**: Power consumption and operating time
-- **📡 Interference**: RF interference with other devices
-- **🎯 Selectivity**: Precision in dense tag environments
+**Configuration Element:** `<TransmitPowerIndex>value</TransmitPowerIndex>`
 
 ---
 
-## 📊 Power Index Table
+## 📊 Official Power Index Table
 
-### Complete Power Reference
+### Complete Power Reference (0-50)
 
-| Power Index | Approximate EIRP (dBm) | Approximate Power (mW) | Typical Range | Use Case |
-|-------------|-------------------------|------------------------|---------------|----------|
-| **0** | 10 | 10 | 5-10cm | Contact reading only |
-| **1** | 11 | 13 | 8-15cm | Very close proximity |
-| **2** | 12 | 16 | 10-20cm | Desktop, precise selection |
-| **3** | 13 | 20 | 15-25cm | Close handheld use |
-| **4** | 14 | 25 | 20-30cm | Desktop applications |
-| **5** | 15 | 32 | 25-35cm | Short range handheld |
-| **6** | 16 | 40 | 30-40cm | Standard close reading |
-| **7** | 17 | 50 | 35-45cm | Handheld applications |
-| **8** | 18 | 63 | 40-55cm | Medium-close range |
-| **9** | 19 | 79 | 45-60cm | Standard handheld |
-| **10** | 20 | 100 | 50-70cm | General purpose |
-| **11** | 21 | 126 | 60-80cm | Standard operations |
-| **12** | 22 | 158 | 70-90cm | Extended handheld |
-| **13** | 23 | 200 | 80-100cm | Medium range |
-| **14** | 24 | 251 | 90-110cm | Extended applications |
-| **15** | 25 | 316 | 100-120cm | Standard warehouse |
-| **16** | 26 | 398 | 110-140cm | Medium-long range |
-| **17** | 27 | 501 | 120-150cm | Warehouse operations |
-| **18** | 28 | 631 | 140-170cm | Extended warehouse |
-| **19** | 29 | 794 | 160-190cm | Long range handheld |
-| **20** | 30 | 1000 | 180-210cm | Industrial applications |
-| **21** | 31 | 1259 | 200-230cm | High-power operations |
-| **22** | 32 | 1585 | 220-250cm | Maximum handheld |
-| **23** | 33 | 1995 | 240-270cm | Fixed reader equivalent |
-| **24** | 34 | 2512 | 260-290cm | Long range applications |
-| **25** | 35 | 3162 | 280-320cm | Extended range |
-| **26** | 36 | 3981 | 300-350cm | High-performance |
-| **27** | 37 | 5012 | 320-370cm | Maximum performance |
-| **28** | 38 | 6310 | 340-390cm | Extreme range |
-| **29** | 39 | 7943 | 360-420cm | Maximum legal power |
-| **30** | 40 | 10000 | 380-450cm | Maximum output |
+| Index | Power Value | Index | Power Value | Index | Power Value | Index | Power Value | Index | Power Value |
+|-------|-------------|-------|-------------|-------|-------------|-------|-------------|-------|-------------|
+| **0** | 1000 | **10** | 1100 | **20** | 1200 | **30** | 1300 | **40** | 1400 |
+| **1** | 1010 | **11** | 1110 | **21** | 1210 | **31** | 1310 | **41** | 1410 |
+| **2** | 1020 | **12** | 1120 | **22** | 1220 | **32** | 1320 | **42** | 1420 |
+| **3** | 1030 | **13** | 1130 | **23** | 1230 | **33** | 1330 | **43** | 1430 |
+| **4** | 1040 | **14** | 1140 | **24** | 1240 | **34** | 1340 | **44** | 1440 |
+| **5** | 1050 | **15** | 1150 | **25** | 1250 | **35** | 1350 | **45** | 1450 |
+| **6** | 1060 | **16** | 1160 | **26** | 1260 | **36** | 1360 | **46** | 1460 |
+| **7** | 1070 | **17** | 1170 | **27** | 1270 | **37** | 1370 | **47** | 1470 |
+| **8** | 1080 | **18** | 1180 | **28** | 1280 | **38** | 1380 | **48** | 1480 |
+| **9** | 1090 | **19** | 1190 | **29** | 1290 | **39** | 1390 | **49** | 1490 |
 
-**Note:** Actual range depends on tag type, antenna orientation, environmental conditions, and regulatory limits.
+### Power Reference (50-100)
+
+| Index | Power Value | Index | Power Value | Index | Power Value | Index | Power Value | Index | Power Value |
+|-------|-------------|-------|-------------|-------|-------------|-------|-------------|-------|-------------|
+| **50** | 1500 | **60** | 1600 | **70** | 1700 | **80** | 1800 | **90** | 1900 |
+| **51** | 1510 | **61** | 1610 | **71** | 1710 | **81** | 1810 | **91** | 1910 |
+| **52** | 1520 | **62** | 1620 | **72** | 1720 | **82** | 1820 | **92** | 1920 |
+| **53** | 1530 | **63** | 1630 | **73** | 1730 | **83** | 1830 | **93** | 1930 |
+| **54** | 1540 | **64** | 1640 | **74** | 1740 | **84** | 1840 | **94** | 1940 |
+| **55** | 1550 | **65** | 1650 | **75** | 1750 | **85** | 1850 | **95** | 1950 |
+| **56** | 1560 | **66** | 1660 | **76** | 1760 | **86** | 1860 | **96** | 1960 |
+| **57** | 1570 | **67** | 1670 | **77** | 1770 | **87** | 1870 | **97** | 1970 |
+| **58** | 1580 | **68** | 1680 | **78** | 1780 | **88** | 1880 | **98** | 1980 |
+| **59** | 1590 | **69** | 1690 | **79** | 1790 | **89** | 1890 | **99** | 1990 |
+
+### Power Reference (100-150)
+
+| Index | Power Value | Index | Power Value | Index | Power Value | Index | Power Value | Index | Power Value |
+|-------|-------------|-------|-------------|-------|-------------|-------|-------------|-------|-------------|
+| **100** | 2000 | **110** | 2100 | **120** | 2200 | **130** | 2300 | **140** | 2400 |
+| **101** | 2010 | **111** | 2110 | **121** | 2210 | **131** | 2310 | **141** | 2410 |
+| **102** | 2020 | **112** | 2120 | **122** | 2220 | **132** | 2320 | **142** | 2420 |
+| **103** | 2030 | **113** | 2130 | **123** | 2230 | **133** | 2330 | **143** | 2430 |
+| **104** | 2040 | **114** | 2140 | **124** | 2240 | **134** | 2340 | **144** | 2440 |
+| **105** | 2050 | **115** | 2150 | **125** | 2250 | **135** | 2350 | **145** | 2450 |
+| **106** | 2060 | **116** | 2160 | **126** | 2260 | **136** | 2360 | **146** | 2460 |
+| **107** | 2070 | **117** | 2170 | **127** | 2270 | **137** | 2370 | **147** | 2470 |
+| **108** | 2080 | **118** | 2180 | **128** | 2280 | **138** | 2380 | **148** | 2480 |
+| **109** | 2090 | **119** | 2190 | **129** | 2290 | **139** | 2390 | **149** | 2490 |
+
+### Power Reference (150-170)
+
+| Index | Power Value | Index | Power Value |
+|-------|-------------|-------|-------------|
+| **150** | 2500 | **160** | 2600 |
+| **151** | 2510 | **161** | 2610 |
+| **152** | 2520 | **162** | 2620 |
+| **153** | 2530 | **163** | 2630 |
+| **154** | 2540 | **164** | 2640 |
+| **155** | 2550 | **165** | 2650 |
+| **156** | 2560 | **166** | 2660 |
+| **157** | 2570 | **167** | 2670 |
+| **158** | 2580 | **168** | 2680 |
+| **159** | 2590 | **169** | 2690 |
+| | | **170** | 2700 |
+
+**Note:** Power values are official Zebra FXP20 specifications from the FXP20KeyInjector documentation.
 
 ---
 
 ## 🎯 Power Selection Guide
 
-### Low Power (Index 0-10)
+### Low Power (Index 0-50)
 
 #### Optimal Uses:
-- ✅ **Dense Tag Environments**: Many tags close together
-- ✅ **Precision Reading**: Need to read specific tags only
-- ✅ **Battery Conservation**: Extending device operating time
+- ✅ **Close Range Applications**: Short distance reading
+- ✅ **Power Conservation**: Lower power consumption
 - ✅ **Interference Reduction**: Minimizing RF noise
-- ✅ **Desktop Applications**: Close-range, controlled environments
+- ✅ **Dense Tag Environments**: Many tags close together
 
 #### Configuration Example:
 ```xml
-<TransmitPower>8</TransmitPower>                  <!-- Medium-low power -->
-<Session>S1</Session>                             <!-- Temporary session -->
-<Target>A</Target>                                <!-- Single target -->
-<InventoryDuration>800</InventoryDuration>        <!-- Short inventory -->
+<AntennasConfig>
+  <antennaConfig>
+    <Antenna_ID>1</Antenna_ID>
+    <TransmitPowerIndex>25</TransmitPowerIndex>
+    <SingulationControl_Session>SESSION_S1</SingulationControl_Session>
+  </antennaConfig>
+</AntennasConfig>
 ```
 
-#### Typical Applications:
-- 📋 **Document Tracking**: Papers with embedded tags
-- 💊 **Pharmaceutical**: Small item tracking
-- 🔬 **Laboratory**: Sample identification  
-- 🏪 **Retail POS**: Item-level scanning
-- 📱 **Access Cards**: Badge/card reading
-
-### Medium Power (Index 11-20)
+### Medium Power (Index 51-120)
 
 #### Optimal Uses:
 - ✅ **General Handheld Use**: Standard RFID applications
 - ✅ **Mixed Environments**: Varying tag densities
-- ✅ **Balanced Performance**: Range vs battery life
+- ✅ **Balanced Performance**: Optimal power usage
 - ✅ **Standard Inventory**: Typical warehouse operations
-- ✅ **Multi-Tag Reading**: Small groups of tags
 
 #### Configuration Example:
 ```xml
-<TransmitPower>16</TransmitPower>                 <!-- Medium power -->
-<Session>S0</Session>                             <!-- Persistent session -->
-<Target>A</Target>                                <!-- Standard target -->
-<InventoryDuration>1200</InventoryDuration>       <!-- Standard inventory -->
+<AntennasConfig>
+  <antennaConfig>
+    <Antenna_ID>1</Antenna_ID>
+    <TransmitPowerIndex>85</TransmitPowerIndex>
+    <SingulationControl_Session>SESSION_S0</SingulationControl_Session>
+  </antennaConfig>
+</AntennasConfig>
 ```
 
-#### Typical Applications:
-- 📦 **Shipping/Receiving**: Package tracking
-- 🏭 **Manufacturing**: Work-in-process tracking
-- 🏪 **Retail**: Inventory management
-- 🏥 **Healthcare**: Asset tracking
-- 📚 **Library**: Book/media management
-
-### High Power (Index 21-30)
+### High Power (Index 121-170)
 
 #### Optimal Uses:
 - ✅ **Long Range Reading**: Maximum reading distance
 - ✅ **Difficult Tags**: Poor quality or damaged tags
 - ✅ **Through Materials**: Reading through packaging
-- ✅ **Sparse Environments**: Few tags, wide spacing
-- ✅ **Fixed Reader Replacement**: Handheld as fixed reader
+- ✅ **Harsh Environments**: Industrial applications
 
 #### Configuration Example:
 ```xml
-<TransmitPower>26</TransmitPower>                 <!-- High power -->
-<Session>S0</Session>                             <!-- Persistent session -->
-<Target>A</Target>                                <!-- Single target -->
-<InventoryDuration>1500</InventoryDuration>       <!-- Extended inventory -->
-<RetryCount>3</RetryCount>                        <!-- Multiple retries -->
+<AntennasConfig>
+  <antennaConfig>
+    <Antenna_ID>1</Antenna_ID>
+    <TransmitPowerIndex>150</TransmitPowerIndex>
+    <SingulationControl_Session>SESSION_S0</SingulationControl_Session>
+  </antennaConfig>
+</AntennasConfig>
 ```
-
-#### Typical Applications:
-- 🏭 **Industrial**: Harsh environment tracking
-- 🚛 **Logistics**: Pallet/container reading
-- 🏗️ **Construction**: Equipment/tool tracking
-- 🌾 **Agriculture**: Livestock/crop tracking
-- ⛽ **Oil & Gas**: Pipeline/equipment tracking
 
 ---
 
-## 📏 Range Estimation Guidelines
+## 📏 Power Selection Guidelines
 
-### Factors Affecting Range
+### Power Index Selection
 
-#### Tag-Related Factors:
-- **🏷️ Tag Type**: Different manufacturers, chip types
-- **📐 Tag Size**: Larger antennas = better performance
-- **🔧 Tag Quality**: New vs old, damaged vs intact
-- **📊 Tag Orientation**: Angle relative to reader antenna
-- **🏷️ Tag Memory**: Amount of data stored affects performance
-
-#### Environmental Factors:
-- **📦 Materials**: Metal, liquid, dense materials reduce range
-- **🌡️ Temperature**: Extreme temperatures affect performance
-- **💧 Humidity**: High humidity can reduce range
-- **📡 Interference**: Other RF devices, metal objects
-- **📍 Location**: Indoor vs outdoor, obstacles
-
-#### Reader Factors:
-- **📡 Antenna Quality**: Reader antenna condition
-- **🔋 Battery Level**: Low battery reduces power output
-- **⚙️ Configuration**: Session, target, timing settings
-- **📊 Sensitivity**: Receiver sensitivity settings
-
-### Range Testing Procedure
-
-#### Step 1: Baseline Test
-1. **⚙️ Set** power index to 15 (medium)
-2. **🏷️ Use** standard test tag
-3. **📏 Measure** maximum reliable read range
-4. **📝 Record** baseline performance
-
-#### Step 2: Power Optimization
-1. **⬇️ Reduce** power by 5 levels
-2. **📏 Test** range at new power level
-3. **📊 Compare** performance vs battery life
-4. **⬆️ Increase** power if range insufficient
-5. **🔄 Repeat** until optimal balance found
+#### Based on Application Requirements:
+- **Low Power (0-50)**: Close proximity, power conservation
+- **Medium Power (51-120)**: Standard handheld applications
+- **High Power (121-170)**: Long range, difficult environments
 
 #### Test Configuration:
 ```xml
-<!-- Range testing setup -->
-<TransmitPower>15</TransmitPower>                 <!-- Start at medium power -->
-<Session>S0</Session>                             <!-- Use persistent session -->
-<InventoryDuration>1000</InventoryDuration>       <!-- Standard duration -->
-<ReadTimeout>500</ReadTimeout>                    <!-- Standard timeout -->
-<RetryCount>3</RetryCount>                        <!-- Multiple attempts -->
+<AntennasConfig>
+  <antennaConfig>
+    <Antenna_ID>1</Antenna_ID>
+    <TransmitPowerIndex>85</TransmitPowerIndex>
+    <SingulationControl_Session>SESSION_S0</SingulationControl_Session>
+    <SingulationControl_TagPopulation>30</SingulationControl_TagPopulation>
+  </antennaConfig>
+</AntennasConfig>
+```
+
+**Note:** Actual reading performance depends on tag type, environmental conditions, antenna orientation, and regulatory limits.
+
+---
+
+## 📊 Application-Specific Examples
+
+### Standard Applications
+
+#### General Inventory:
+```xml
+<AntennasConfig>
+  <antennaConfig>
+    <Antenna_ID>1</Antenna_ID>
+    <TransmitPowerIndex>100</TransmitPowerIndex>
+    <SingulationControl_Session>SESSION_S0</SingulationControl_Session>
+  </antennaConfig>
+</AntennasConfig>
+```
+
+#### Close Range Reading:
+```xml
+<AntennasConfig>
+  <antennaConfig>
+    <Antenna_ID>1</Antenna_ID>
+    <TransmitPowerIndex>25</TransmitPowerIndex>
+    <SingulationControl_Session>SESSION_S1</SingulationControl_Session>
+  </antennaConfig>
+</AntennasConfig>
+```
+
+#### Maximum Range:
+```xml
+<AntennasConfig>
+  <antennaConfig>
+    <Antenna_ID>1</Antenna_ID>
+    <TransmitPowerIndex>170</TransmitPowerIndex>
+    <SingulationControl_Session>SESSION_S0</SingulationControl_Session>
+  </antennaConfig>
+</AntennasConfig>
 ```
 
 ---
 
-## 🔋 Power vs Battery Life
+## 🧪 Power Index Testing
 
-### Battery Impact by Power Level
+### Test Configuration
 
-| Power Range | Battery Impact | Operating Time* | Recommendation |
-|-------------|---------------|----------------|----------------|
-| **0-5** | Minimal | 12-16 hours | Maximum battery life |
-| **6-10** | Low | 10-14 hours | Extended operation |
-| **11-15** | Moderate | 8-12 hours | Balanced performance |
-| **16-20** | Medium | 6-10 hours | Standard operation |
-| **21-25** | High | 4-8 hours | Performance priority |
-| **26-30** | Maximum | 2-6 hours | Short-term high performance |
-
-*Approximate operating times with standard FXP20 battery under typical conditions
-
-### Battery Optimization Strategies
-
-#### Dynamic Power Management:
+#### Basic Test Setup:
 ```xml
-<!-- Auto-adjust power based on conditions -->
-<AutoAdjustPower>true</AutoAdjustPower>           <!-- Enable dynamic power -->
-<PowerStepSize>2</PowerStepSize>                  <!-- Adjustment increment -->
-<MinTransmitPower>10</MinTransmitPower>           <!-- Minimum power -->
-<MaxTransmitPower>25</MaxTransmitPower>           <!-- Maximum power -->
+<AntennasConfig>
+  <antennaConfig>
+    <Antenna_ID>1</Antenna_ID>
+    <TransmitPowerIndex>85</TransmitPowerIndex>
+    <SingulationControl_Session>SESSION_S0</SingulationControl_Session>
+  </antennaConfig>
+</AntennasConfig>
 ```
 
-#### Power Saving Configuration:
-```xml
-<!-- Battery conservation setup -->
-<TransmitPower>12</TransmitPower>                 <!-- Lower power -->
-<GPIOReadingDurationInMs>3000</GPIOReadingDurationInMs> <!-- Shorter sessions -->
-<BeepOnRead>false</BeepOnRead>                    <!-- Disable audio -->
-<AutoAdjustPower>true</AutoAdjustPower>           <!-- Smart power management -->
-```
+### Common Test Values
+
+| Power Index | Power Value | Application |
+|-------------|-------------|-------------|
+| 25 | 1250 | Low power testing |
+| 85 | 1850 | Medium power testing |
+| 150 | 2500 | High power testing |
+| 170 | 2700 | Maximum power testing |
 
 ---
 
-## 🌍 Regulatory Compliance
+## 🔧 Troubleshooting Power Settings
 
-### Regional Power Limits
+### Common Issues
 
-#### North America (FCC Part 15)
-- **📡 Frequency**: 902-928 MHz
-- **⚡ Maximum EIRP**: 36 dBm (4 watts)
-- **📊 FXP20 Limit**: Power Index 26-30 (depending on antenna)
-- **⚙️ Configuration**: `<Region>NA</Region>`
-
-#### Europe (ETSI EN 302 208)
-- **📡 Frequency**: 865-868 MHz  
-- **⚡ Maximum EIRP**: 33 dBm (2 watts)
-- **📊 FXP20 Limit**: Power Index 23-26 (depending on antenna)
-- **⚙️ Configuration**: `<Region>EU</Region>`
-
-#### Asia Pacific (Various Standards)
-- **📡 Frequency**: 920-925 MHz (varies by country)
-- **⚡ Maximum EIRP**: 30-36 dBm (varies by country)  
-- **📊 FXP20 Limit**: Power Index 20-30 (varies by country)
-- **⚙️ Configuration**: `<Region>AP</Region>`
-
-### Compliance Configuration:
-```xml
-<!-- Regional compliance -->
-<Region>NA</Region>                               <!-- Set appropriate region -->
-<MaxTransmitPower>26</MaxTransmitPower>           <!-- Respect regional limits -->
-<PowerTable>FCC</PowerTable>                      <!-- Use regional power table -->
-<ChannelList>1,2,3,4</ChannelList>               <!-- Regional channels only -->
-```
-
----
-
-## 📊 Performance Optimization
-
-### Application-Specific Power Settings
-
-#### Inventory Management:
-```xml
-<!-- High-volume inventory -->
-<TransmitPower>20</TransmitPower>                 <!-- Medium-high power -->
-<Session>S0</Session>                             <!-- Persistent session -->
-<RemoveDuplicates>true</RemoveDuplicates>         <!-- Filter duplicates -->
-<InventoryDuration>1000</InventoryDuration>       <!-- Fast inventory -->
-```
-
-#### Asset Tracking:
-```xml
-<!-- Individual asset tracking -->
-<TransmitPower>15</TransmitPower>                 <!-- Medium power -->
-<Session>S1</Session>                             <!-- Temporary session -->
-<Target>A</Target>                                <!-- Single target -->
-<ReadTimeout>800</ReadTimeout>                    <!-- Extended timeout -->
-```
-
-#### Access Control:
-```xml
-<!-- Card/badge reading -->
-<TransmitPower>8</TransmitPower>                  <!-- Low power for precision -->
-<Session>S1</Session>                             <!-- Temporary session -->
-<InventoryDuration>500</InventoryDuration>        <!-- Quick read -->
-<BeepOnRead>true</BeepOnRead>                     <!-- Audio feedback -->
-```
-
-### Environmental Adaptations
-
-#### Dense Metal Environment:
-```xml
-<!-- Metal-rich environments -->
-<TransmitPower>25</TransmitPower>                 <!-- Higher power needed -->
-<RetryCount>5</RetryCount>                        <!-- More retries -->
-<InventoryDuration>1500</InventoryDuration>       <!-- Extended inventory -->
-<Session>S0</Session>                             <!-- Persistent session -->
-```
-
-#### Outdoor Applications:
-```xml
-<!-- Outdoor/harsh conditions -->
-<TransmitPower>28</TransmitPower>                 <!-- High power for range -->
-<MaxTransmitPower>30</MaxTransmitPower>           <!-- Allow maximum */
-<AutoAdjustPower>true</AutoAdjustPower>           <!-- Dynamic adjustment -->
-<RetryCount>3</RetryCount>                        <!-- Multiple attempts -->
-```
-
-#### Battery-Powered Mobile:
-```xml
-<!-- Mobile/battery applications -->
-<TransmitPower>14</TransmitPower>                 <!-- Balanced power -->
-<AutoAdjustPower>true</AutoAdjustPower>           <!-- Smart power management -->
-<PowerStepSize>1</PowerStepSize>                  <!-- Fine adjustments -->
-<MinTransmitPower>8</MinTransmitPower>            <!-- Conservation minimum */
-```
-
----
-
-## 🧪 Power Level Testing
-
-### Systematic Testing Approach
-
-#### Test Matrix Setup:
-1. **🏷️ Standard Tags**: Use consistent tag types
-2. **📏 Distance Markers**: Mark 50cm intervals up to 5m
-3. **📊 Test Conditions**: Consistent environment, orientation
-4. **📝 Data Collection**: Record success rates at each distance
-
-#### Test Procedure:
-```xml
-<!-- Testing configuration -->
-<TransmitPower>10</TransmitPower>                 <!-- Start low -->
-<Session>S0</Session>                             <!-- Consistent session -->
-<InventoryDuration>2000</InventoryDuration>       <!-- Extended test time -->
-<RetryCount>5</RetryCount>                        <!-- Multiple attempts -->
-<TrackRSSI>true</TrackRSSI>                       <!-- Monitor signal strength -->
-```
-
-#### Performance Metrics:
-- **📊 Read Success Rate**: Percentage of successful reads
-- **📶 RSSI Values**: Signal strength at various distances
-- **⏱️ Read Speed**: Tags per second at optimal range
-- **🔋 Power Consumption**: Battery drain per hour
-- **📏 Maximum Range**: Furthest reliable read distance
-
-### Test Results Documentation
-
-#### Results Table Template:
-| Power Index | Max Range (cm) | RSSI @ 1m | Success Rate | Battery Life |
-|-------------|----------------|-----------|--------------|--------------|
-| 10 | 70 | -65 dBm | 95% | 12 hours |
-| 15 | 120 | -60 dBm | 98% | 8 hours |
-| 20 | 180 | -55 dBm | 98% | 6 hours |
-| 25 | 250 | -50 dBm | 97% | 4 hours |
-| 30 | 320 | -45 dBm | 96% | 3 hours |
-
----
-
-## 🔧 Troubleshooting Power Issues
-
-### Common Power-Related Problems
-
-#### Poor Read Range:
-**Symptoms**: Tags only read at very close range
+#### Poor Read Performance:
 **Solutions**:
-1. **⬆️ Increase** transmit power index
-2. **🔋 Check** battery level
-3. **📡 Verify** antenna connection
-4. **🧪 Test** with known-good tags
+1. **⬆️ Increase** TransmitPowerIndex value (try increments of 25)
+2. **⚡ Check** FXP20 power connection
+3. **📡 Verify** antenna configuration
+4. **🧪 Test** with different power index values
 
-#### Battery Drains Quickly:
-**Symptoms**: Device battery depletes rapidly
+#### Inconsistent Reading:
 **Solutions**:
-1. **⬇️ Reduce** transmit power index  
-2. **⚙️ Enable** auto-adjust power
-3. **⏱️ Shorten** reading session durations
-4. **🔊 Disable** unnecessary beeping
-
-#### Inconsistent Reads:
-**Symptoms**: Variable performance at same distance
-**Solutions**:
-1. **⚙️ Optimize** power for environment
-2. **🔄 Adjust** session parameters
+1. **⚙️ Adjust** power index for your environment
+2. **🔄 Change** session parameters
 3. **📡 Check** for RF interference
-4. **📊 Monitor** RSSI consistency
-
-#### Regulatory Compliance Issues:
-**Symptoms**: Device not permitted in region
-**Solutions**:
-1. **🌍 Set** correct regional configuration
-2. **⚡ Limit** maximum power index
-3. **📋 Use** approved channel list
-4. **📄 Verify** certification requirements
 
 ---
 
-## 📚 Advanced Power Management
-
-### Adaptive Power Control:
-```xml
-<!-- Smart power management -->
-<AutoAdjustPower>true</AutoAdjustPower>
-<PowerAdjustmentMode>RSSI</PowerAdjustmentMode>    <!-- RSSI, RANGE, BATTERY -->
-<TargetRSSI>-60</TargetRSSI>                      <!-- Target signal strength -->
-<PowerAdjustmentInterval>5000</PowerAdjustmentInterval> <!-- Adjustment frequency */
-<PowerStepSize>2</PowerStepSize>                  <!-- Adjustment size -->
-```
-
-### Scheduled Power Management:
-```xml
-<!-- Time-based power control -->
-<ScheduledPowerControl>true</ScheduledPowerControl>
-<DaytimePower>20</DaytimePower>                   <!-- Higher power during day -->
-<NighttimePower>10</NighttimePower>               <!-- Lower power at night -->
-<PowerSwitchTime>18:00</PowerSwitchTime>          <!-- Switch time -->
-```
-
-### Context-Aware Power:
-```xml
-<!-- Environment-based power -->
-<EnvironmentDetection>true</EnvironmentDetection>
-<IndoorPower>15</IndoorPower>                     <!-- Indoor settings */
-<OutdoorPower>25</OutdoorPower>                   <!-- Outdoor settings */
-<WarehousePower>22</WarehousePower>               <!-- Warehouse settings */
-```
-
----
-
-## 📞 Related Resources
+## 📚 Related Resources
 
 - **[Antenna Configuration](Antenna-Configuration.md)** - Complete RF settings guide
 - **[Configuration Reference](Config-Reference.md)** - Power-related parameters

@@ -63,7 +63,6 @@ services:
     hostname: mosquitto
     ports:
       - "1883:1883"      # MQTT
-      - "9001:9001"      # WebSocket (optional)
     volumes:
       - ./config:/mosquitto/config
       - ./data:/mosquitto/data
@@ -172,19 +171,9 @@ keepalive_interval 60
 ```conf
 # Advanced Mosquitto Configuration
 
-# Multiple Listeners
+# MQTT Listener
 listener 1883 0.0.0.0
 protocol mqtt
-
-listener 9001 0.0.0.0
-protocol websockets
-
-# TLS/SSL Configuration (Optional)
-#listener 8883
-#certfile /mosquitto/config/server.crt
-#keyfile /mosquitto/config/server.key
-#cafile /mosquitto/config/ca.crt
-#require_certificate true
 
 # Access Control
 allow_anonymous false
@@ -438,7 +427,7 @@ mosquitto_pub -h localhost -p 1883 -u client_user -P password -t "fxp20/control"
 #### MQTT Settings for Mosquitto
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
-<FXP20KeyInjectorConfig>
+<Configuration>
   <!-- Mosquitto Connection -->
   <Protocol>MQTT</Protocol>
   <MQTTServer>localhost</MQTTServer>              <!-- or server IP -->
@@ -450,12 +439,7 @@ mosquitto_pub -h localhost -p 1883 -u client_user -P password -t "fxp20/control"
   <MQTTSendTopic>fxp20/data</MQTTSendTopic>
   <MQTTControlTopic>fxp20/control</MQTTControlTopic>
   
-  <!-- Connection Settings -->
-  <MQTTKeepAlive>60</MQTTKeepAlive>
-  <MQTTReconnect>true</MQTTReconnect>
-  <MQTTQOS>1</MQTTQOS>
-  <MQTTTimeout>30000</MQTTTimeout>
-</FXP20KeyInjectorConfig>
+  </Configuration>
 ```
 
 ---
@@ -631,17 +615,6 @@ password_file /mosquitto/config/passwd
 acl_file /mosquitto/config/acl
 ```
 
-### TLS/SSL Configuration
-```conf
-# TLS listener
-listener 8883
-certfile /mosquitto/config/server.crt
-keyfile /mosquitto/config/server.key
-cafile /mosquitto/config/ca.crt
-require_certificate false
-use_identity_as_username false
-```
-
 ### Firewall Configuration
 ```bash
 # Linux (ufw)
@@ -667,6 +640,7 @@ def on_connect(client, userdata, flags, rc):
     client.subscribe("fxp20/data")
 
 def on_message(client, userdata, msg):
+    # Message payload contains the raw EPC data (e.g., "E20000123456789012345678")
     print(f"Topic: {msg.topic}, Message: {msg.payload.decode()}")
 
 client = mqtt.Client()
@@ -693,6 +667,7 @@ client.on('connect', () => {
 });
 
 client.on('message', (topic, message) => {
+    // Message contains the raw EPC data (e.g., "E20000123456789012345678")
     console.log(`Received: ${topic} - ${message.toString()}`);
 });
 
@@ -715,6 +690,7 @@ var options = new MqttClientOptionsBuilder()
 
 client.UseApplicationMessageReceivedHandler(e => {
     Console.WriteLine($"Topic: {e.ApplicationMessage.Topic}");
+    // Payload contains the raw EPC data (e.g., "E20000123456789012345678")
     Console.WriteLine($"Payload: {Encoding.UTF8.GetString(e.ApplicationMessage.Payload)}");
 });
 

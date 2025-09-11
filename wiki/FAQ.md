@@ -64,7 +64,6 @@ Common questions and answers about FXP20 Key Injector installation, configuratio
 
 ### Q: The device connects but disconnects immediately. Why?
 **A:** Common causes:
-- **🔋 Low battery** on FXP20 device
 - **⚡ Insufficient USB power** (try powered hub)
 - **🔌 Poor cable quality** (try different cable)
 - **⚙️ COM port conflicts** (close other applications using the port)
@@ -330,10 +329,10 @@ See [Power Index Reference](Power-Index.md) for detailed power level guidance.
 ### Q: How can I optimize for my specific use case?
 **A:** Consider these factors:
 - **📊 Tag volume**: High volume → CLIPBOARDPASTE, MQTT
-- **🔋 Battery life**: Lower power settings, shorter sessions
+- **⚡ Power consumption**: Lower power settings, shorter sessions
 - **🎯 Precision needs**: Lower power, shorter ranges
 - **🏢 Enterprise needs**: MQTT with proper broker infrastructure
-- **📱 Mobile use**: GPIO buttons, battery optimization
+- **📱 Mobile use**: GPIO buttons, power optimization
 
 ---
 

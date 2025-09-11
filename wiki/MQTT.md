@@ -90,7 +90,7 @@ Configure these settings in Config.xml:
 - Passwords are stored in plain text in Config.xml
 - Use strong, unique passwords for MQTT authentication
 - Consider file system permissions to protect Config.xml
-- Future versions may support encrypted password storage
+- Use strong passwords and secure your MQTT broker
 
 ---
 
@@ -174,21 +174,15 @@ services:
 ### Data Publishing
 
 #### EPC Data Format
-When tags are read, FXP20 Key Injector publishes messages to the configured data topic:
+When tags are read, FXP20 Key Injector publishes the raw EPC data directly as the message payload:
 
-```json
-{
-  "timestamp": "2025-09-11T10:30:45Z",
-  "reader_id": "FXP20_001",
-  "epc": "E20000123456789012345678",
-  "rssi": -45,
-  "antenna": 1
-}
+```text
+E20000123456789012345678
 ```
 
 **Message Content:**
-- 🏷️ **Raw EPC Data**: Tag identifier as read from device
-- 📊 **Formatted Data**: Includes CSV separators, CR/LF if configured
+- 🏷️ **Raw EPC Data**: The EPC tag identifier as read from device, sent directly as payload
+- 📊 **Simple Format**: Plain text EPC data, no JSON wrapper or metadata
 - ⏱️ **Real-time**: Published immediately when tag is read
 
 #### Topic Structure Examples

@@ -56,7 +56,7 @@ Primary support for **Zebra FXP20** series:
 
 ### Zebra Device Specifications
 - **📡 Frequency**: 860-960 MHz (UHF RFID)
-- **🔋 Power**: USB-powered or internal battery
+- **⚡ Power**: USB-powered device
 - **🔌 Connectivity**: USB 2.0+ connection
 - **📊 Protocol**: Serial communication over COM ports
 
@@ -134,7 +134,7 @@ If planning to modify configurations extensively:
 ### Hardware Check
 - [ ] 📱 Zebra FXP20 device available
 - [ ] 🔌 USB cable (preferably high-quality)
-- [ ] ⚡ Power source (USB or battery)
+- [ ] ⚡ USB power connection
 - [ ] 🏷️ Test RFID tags available
 
 ### Network Check (MQTT Users)

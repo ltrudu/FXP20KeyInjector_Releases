@@ -292,7 +292,7 @@ For **hardware-related issues** with your FXP20 device:
 
 #### Hardware Issues to Report to Zebra
 - **🔌 Physical connectivity** problems
-- **🔋 Battery** or power issues
+- **⚡ Power** issues
 - **📡 RF performance** problems
 - **💾 Firmware** updates or issues
 - **🔧 Hardware** defects or damage
@@ -310,7 +310,7 @@ For **hardware-related issues** with your FXP20 device:
 - **📱 Device** won't power on
 - **🔌 USB** connection not recognized by Windows
 - **📡 RF** not working or poor performance
-- **🔋 Battery** won't charge or hold charge
+- **⚡ Power** connection issues
 - **💾 Firmware** corruption or update failures
 
 ---

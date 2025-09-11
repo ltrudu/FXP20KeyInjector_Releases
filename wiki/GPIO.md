@@ -40,19 +40,20 @@ Configure GPIO functionality in Config.xml:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
-<FXP20KeyInjectorConfig>
+<Configuration>
   <!-- GPIO Hardware Control -->
-  <HookGPIOToStartReading>true</HookGPIOToStartReading>
-  <GPIOReadingDurationInMs>5000</GPIOReadingDurationInMs>
-  <GPIOPin>1</GPIOPin>
+  <PerformReadingWithGPIO>true</PerformReadingWithGPIO>
+  <PerformReadingDuration>5000</PerformReadingDuration>
+  <PerformReadingGPIOPort>1</PerformReadingGPIOPort>
   
   <!-- Duplicate Filtering for GPIO Sessions -->
   <RemoveDuplicates>true</RemoveDuplicates>
   
   <!-- Audio Feedback -->
   <BeepOnRead>true</BeepOnRead>
-  <BeepDuration>200</BeepDuration>
-</FXP20KeyInjectorConfig>
+  <nbBeeps>1</nbBeeps>
+  <beepSleepTime>400</beepSleepTime>
+</Configuration>
 ```
 
 ### Configuration Parameters
@@ -60,16 +61,14 @@ Configure GPIO functionality in Config.xml:
 #### GPIO Control Settings
 ```xml
 <!-- Enable GPIO button control -->
-<HookGPIOToStartReading>true</HookGPIOToStartReading>
+<PerformReadingWithGPIO>true</PerformReadingWithGPIO>
 
 <!-- Reading duration in milliseconds (5 seconds = 5000ms) -->
-<GPIOReadingDurationInMs>5000</GPIOReadingDurationInMs>
+<PerformReadingDuration>5000</PerformReadingDuration>
 
 <!-- GPIO pin number (hardware-specific) -->
-<GPIOPin>1</GPIOPin>
+<PerformReadingGPIOPort>1</PerformReadingGPIOPort>
 
-<!-- GPIO trigger mode -->
-<GPIOTriggerMode>PRESS</GPIOTriggerMode>  <!-- PRESS, RELEASE, HOLD -->
 ```
 
 #### Session Management
@@ -77,31 +76,22 @@ Configure GPIO functionality in Config.xml:
 <!-- Duplicate tag handling during GPIO sessions -->
 <RemoveDuplicates>true</RemoveDuplicates>
 
-<!-- Session timeout if no tags read -->
-<GPIOSessionTimeout>30000</GPIOSessionTimeout>
-
-<!-- Continuous reading mode -->
-<ContinuousGPIOReading>false</ContinuousGPIOReading>
 ```
 
 #### Audio Feedback
 ```xml
 <!-- Beep when tag is read -->
 <BeepOnRead>true</BeepOnRead>
+<nbBeeps>1</nbBeeps>
+<beepSleepTime>400</beepSleepTime>
 
-<!-- Beep duration in milliseconds -->
-<BeepDuration>200</BeepDuration>
-
-<!-- Session start/stop beeps -->
-<BeepOnSessionStart>true</BeepOnSessionStart>
-<BeepOnSessionEnd>true</BeepOnSessionEnd>
 ```
 
 ---
 
 ## 🎮 GPIO Operation Modes
 
-### Mode 1: Timed Reading Sessions (Recommended)
+### Timed Reading Sessions
 
 **How it works:**
 1. **🔘 Press** GPIO button
@@ -112,10 +102,9 @@ Configure GPIO functionality in Config.xml:
 
 **Configuration:**
 ```xml
-<HookGPIOToStartReading>true</HookGPIOToStartReading>
-<GPIOReadingDurationInMs>5000</GPIOReadingDurationInMs>
+<PerformReadingWithGPIO>true</PerformReadingWithGPIO>
+<PerformReadingDuration>5000</PerformReadingDuration>
 <RemoveDuplicates>true</RemoveDuplicates>
-<ContinuousGPIOReading>false</ContinuousGPIOReading>
 ```
 
 **Best for:**
@@ -124,49 +113,6 @@ Configure GPIO functionality in Config.xml:
 - ✅ Batch processing
 - ✅ Hands-free operation
 
-### Mode 2: Toggle Reading (Press to Start/Stop)
-
-**How it works:**
-1. **🔘 First press** - Start reading
-2. **🔄 Continuous reading** until next button press
-3. **🔘 Second press** - Stop reading
-4. **⏱️ No automatic timeout**
-
-**Configuration:**
-```xml
-<HookGPIOToStartReading>true</HookGPIOToStartReading>
-<GPIOReadingDurationInMs>0</GPIOReadingDurationInMs>  <!-- 0 = no timeout -->
-<ContinuousGPIOReading>true</ContinuousGPIOReading>
-<RemoveDuplicates>true</RemoveDuplicates>
-```
-
-**Best for:**
-- ✅ Long scanning sessions
-- ✅ Continuous monitoring
-- ✅ User-controlled duration
-- ✅ Flexible timing needs
-
-### Mode 3: Hold-to-Read
-
-**How it works:**
-1. **🔘 Hold** GPIO button down
-2. **▶️ Reading active** while button held
-3. **🔘 Release** button to stop
-4. **⏹️ Immediate stop** on release
-
-**Configuration:**
-```xml
-<HookGPIOToStartReading>true</HookGPIOToStartReading>
-<GPIOTriggerMode>HOLD</GPIOTriggerMode>
-<GPIOReadingDurationInMs>0</GPIOReadingDurationInMs>
-<RemoveDuplicates>false</RemoveDuplicates>  <!-- Real-time reading -->
-```
-
-**Best for:**
-- ✅ Precise timing control
-- ✅ Single tag reads
-- ✅ Training scenarios
-- ✅ Demo purposes
 
 ---
 
@@ -209,58 +155,22 @@ When `RemoveDuplicates` is enabled:
 
 ---
 
-## 🔧 Advanced GPIO Configuration
+## 🔧 GPIO Pin Configuration
 
 ### Hardware-Specific Settings
 
-#### GPIO Pin Mapping
+#### GPIO Port Selection
 ```xml
-<!-- Pin assignments (device-specific) -->
-<GPIOPin>1</GPIOPin>                 <!-- Primary trigger button -->
-<GPIOSecondaryPin>2</GPIOSecondaryPin> <!-- Secondary button -->
-
-<!-- Pin active state -->
-<GPIOActiveHigh>false</GPIOActiveHigh>  <!-- true = HIGH active, false = LOW active -->
-
-<!-- Debounce settings -->
-<GPIODebounceMs>50</GPIODebounceMs>    <!-- Debounce time in milliseconds -->
+<!-- GPIO port number (device-specific) -->
+<PerformReadingGPIOPort>1</PerformReadingGPIOPort>
 ```
 
-#### Trigger Sensitivity
-```xml
-<!-- Button press detection -->
-<GPIOMinPressTime>100</GPIOMinPressTime>     <!-- Minimum press duration -->
-<GPIOMaxPressTime>10000</GPIOMaxPressTime>   <!-- Maximum press duration -->
+- Multi-press detection
+- Session timeout management
+- Multiple button support
+- GPIO trigger sensitivity
 
-<!-- Multi-press detection -->
-<GPIODoubleClickTime>500</GPIODoubleClickTime> <!-- Double-click window -->
-<GPIODoubleClickAction>CLEAR</GPIODoubleClickAction> <!-- Action on double-click -->
-```
-
-### Session Timeout Configuration
-```xml
-<!-- Reading session timeouts -->
-<GPIOReadingDurationInMs>5000</GPIOReadingDurationInMs>  <!-- Active reading time -->
-<GPIOSessionTimeout>30000</GPIOSessionTimeout>           <!-- Max session duration -->
-<GPIOIdleTimeout>60000</GPIOIdleTimeout>                 <!-- Idle timeout -->
-
-<!-- Timeout actions -->
-<GPIOTimeoutAction>STOP</GPIOTimeoutAction>              <!-- STOP, CONTINUE, RESTART -->
-```
-
-### Multi-Button Support
-```xml
-<!-- Multiple GPIO buttons -->
-<GPIOButton1Pin>1</GPIOButton1Pin>
-<GPIOButton1Action>START_READING</GPIOButton1Action>
-<GPIOButton1Duration>5000</GPIOButton1Duration>
-
-<GPIOButton2Pin>2</GPIOButton2Pin>
-<GPIOButton2Action>STOP_READING</GPIOButton2Action>
-
-<GPIOButton3Pin>3</GPIOButton3Pin>
-<GPIOButton3Action>BEEP</GPIOButton3Action>
-```
+These features are managed by the FXP20 device firmware to ensure optimal performance and reliability.
 
 ---
 
@@ -299,12 +209,6 @@ When `RemoveDuplicates` is enabled:
 - **⏱️ Long Sessions**: 15-30 seconds for large batches
 - **⏱️ Continuous**: Use toggle mode for unlimited duration
 
-#### Sensitivity Adjustment
-```xml
-<!-- Fine-tune button sensitivity -->
-<GPIODebounceMs>25</GPIODebounceMs>      <!-- Reduce for more sensitive -->
-<GPIOMinPressTime>50</GPIOMinPressTime>   <!-- Minimum valid press -->
-```
 
 ---
 
@@ -313,8 +217,8 @@ When `RemoveDuplicates` is enabled:
 ### Inventory Management
 **Scenario:** Warehouse inventory counting
 ```xml
-<HookGPIOToStartReading>true</HookGPIOToStartReading>
-<GPIOReadingDurationInMs>10000</GPIOReadingDurationInMs>  <!-- 10 second sessions -->
+<PerformReadingWithGPIO>true</PerformReadingWithGPIO>
+<PerformReadingDuration>10000</PerformReadingDuration>  <!-- 10 second sessions -->
 <RemoveDuplicates>true</RemoveDuplicates>
 <BeepOnRead>true</BeepOnRead>
 ```
@@ -330,8 +234,8 @@ When `RemoveDuplicates` is enabled:
 ### Quality Control
 **Scenario:** Manufacturing quality checks
 ```xml
-<HookGPIOToStartReading>true</HookGPIOToStartReading>
-<GPIOReadingDurationInMs>3000</GPIOReadingDurationInMs>   <!-- 3 second sessions -->
+<PerformReadingWithGPIO>true</PerformReadingWithGPIO>
+<PerformReadingDuration>3000</PerformReadingDuration>   <!-- 3 second sessions -->
 <RemoveDuplicates>false</RemoveDuplicates>                <!-- Allow re-reads -->
 <BeepOnRead>true</BeepOnRead>
 ```
@@ -346,18 +250,19 @@ When `RemoveDuplicates` is enabled:
 ### Access Control
 **Scenario:** Badge/ID verification
 ```xml
-<HookGPIOToStartReading>true</HookGPIOToStartReading>
-<GPIOTriggerMode>HOLD</GPIOTriggerMode>                   <!-- Hold to read -->
+<PerformReadingWithGPIO>true</PerformReadingWithGPIO>
+<PerformReadingDuration>2000</PerformReadingDuration>     <!-- Short 2-second sessions -->
 <RemoveDuplicates>false</RemoveDuplicates>
 <BeepOnRead>true</BeepOnRead>
 ```
 
 **Workflow:**
-1. **🔘 Hold** button
-2. **🏷️ Present** ID card/badge
+1. **🔘 Press** button to start 2-second reading session
+2. **🏷️ Present** ID card/badge immediately
 3. **🔊 Beep** confirms read
-4. **🔘 Release** button
+4. **⏱️ Session** ends automatically
 5. **🔐 Access** granted/denied
+
 
 ---
 
@@ -385,14 +290,11 @@ When `RemoveDuplicates` is enabled:
 - 📊 Missed button presses
 
 **Solutions:**
-```xml
-<!-- Increase debounce time -->
-<GPIODebounceMs>100</GPIODebounceMs>
+1. **🧪 Test** different GPIO port numbers in configuration
+2. **📱 Verify** FXP20 hardware functionality
+3. **🔄 Restart** application and device
+4. **📋 Consult** FXP20 hardware documentation
 
-<!-- Adjust sensitivity -->
-<GPIOMinPressTime>200</GPIOMinPressTime>
-<GPIOActiveHigh>false</GPIOActiveHigh>
-```
 
 #### Session Duration Issues
 **Symptoms:**
@@ -401,10 +303,11 @@ When `RemoveDuplicates` is enabled:
 - 📊 Reading continues indefinitely
 
 **Solutions:**
-1. **⏱️ Adjust** `GPIOReadingDurationInMs`
-2. **🔧 Set** appropriate timeout values
-3. **🧪 Test** with different durations
-4. **📊 Monitor** session status indicators
+1. **⏱️ Adjust** `PerformReadingDuration`
+2. **🧪 Test** with different durations
+3. **📊 Monitor** session status indicators
+4. **🔄 Restart** application if sessions don't end properly
+
 
 #### Duplicate Filtering Problems
 **Symptoms:**
@@ -414,11 +317,10 @@ When `RemoveDuplicates` is enabled:
 
 **Solutions:**
 ```xml
-<!-- Fine-tune duplicate filtering -->
-<RemoveDuplicates>true</RemoveDuplicates>
-<DuplicateTimeoutMs>1000</DuplicateTimeoutMs>        <!-- Custom timeout -->
-<DuplicateMatchMode>EXACT</DuplicateMatchMode>       <!-- EXACT, PARTIAL -->
+<!-- Enable or disable duplicate filtering -->
+<RemoveDuplicates>true</RemoveDuplicates>  <!-- true = filter duplicates, false = allow all reads -->
 ```
+
 
 ### Hardware Troubleshooting
 
@@ -443,28 +345,26 @@ When `RemoveDuplicates` is enabled:
 #### High-Volume Scanning
 ```xml
 <!-- Optimized for speed and accuracy -->
-<GPIOReadingDurationInMs>3000</GPIOReadingDurationInMs>
+<PerformReadingDuration>3000</PerformReadingDuration>
 <RemoveDuplicates>true</RemoveDuplicates>
-<GPIODebounceMs>25</GPIODebounceMs>
 <BeepOnRead>false</BeepOnRead>  <!-- Disable for speed -->
 ```
 
 #### Precision Scanning
 ```xml
 <!-- Optimized for accuracy over speed -->
-<GPIOReadingDurationInMs>8000</GPIOReadingDurationInMs>
+<PerformReadingDuration>8000</PerformReadingDuration>
 <RemoveDuplicates>true</RemoveDuplicates>
-<GPIODebounceMs>100</GPIODebounceMs>
 <BeepOnRead>true</BeepOnRead>
 ```
 
-#### Battery Conservation
+#### Power Conservation  
 ```xml
 <!-- Minimize power usage -->
-<GPIOReadingDurationInMs>2000</GPIOReadingDurationInMs>  <!-- Short sessions -->
+<PerformReadingDuration>2000</PerformReadingDuration>  <!-- Short sessions -->
 <BeepOnRead>false</BeepOnRead>                            <!-- No audio -->
-<GPIOIdleTimeout>30000</GPIOIdleTimeout>                  <!-- Quick timeout -->
 ```
+
 
 ---
 

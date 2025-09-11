@@ -132,7 +132,7 @@ This software is licensed under the **Zebra End User License Agreement (EULA)**.
 
 1. **📥 Download** and extract the application
 2. **🔌 Connect** your Zebra FX device
-3. **▶️ Run** FXP20KeyInjector.exe as Administrator
+3. **▶️ Run** FXP20KeyInjector.exe
 4. **⚙️ Configure** connection settings via GUI
 5. **📋 Open** your target application
 6. **🏷️ Start scanning** - tag data appears automatically!

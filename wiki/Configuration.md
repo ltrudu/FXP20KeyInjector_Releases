@@ -185,6 +185,8 @@ The `Config.xml` file is located in the same directory as `FXP20KeyInjector.exe`
 - Space: 32
 - Enter: 13
 
+📋 **For complete key code reference, see [ASCII Codes Guide](ASCII-Codes.md)**
+
 ---
 
 ## 🎛️ GPIO Configuration
@@ -265,7 +267,7 @@ The Config.xml file contains detailed antenna configuration for each antenna por
     <RFMode_Tari>0</RFMode_Tari>
     <RFMode_TableIndex>2</RFMode_TableIndex>
     <ReceiveSensitivityIndex>0</ReceiveSensitivityIndex>
-    <TransmitPowerIndex>100</TransmitPowerIndex>
+    <TransmitPowerIndex>36</TransmitPowerIndex>
     <TransmitFrequencyIndex>1</TransmitFrequencyIndex>
     <SingulationControl_Session>SESSION_S1</SingulationControl_Session>
     <SingulationControl_TagPopulation>30</SingulationControl_TagPopulation>

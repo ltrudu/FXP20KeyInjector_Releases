@@ -104,10 +104,9 @@ Comprehensive troubleshooting guide for common FXP20 Key Injector issues and the
    - Right-click → Properties → Power Management
    - Uncheck "Allow computer to turn off this device"
 
-3. **🔋 FXP20 Power Settings**
+3. **⚡ FXP20 Power Settings**
    - Check FXP20 power settings
-   - Ensure adequate battery level
-   - Verify power adapter if using external power
+   - Verify USB power connection
    - Check for overheating issues
 
 ---
