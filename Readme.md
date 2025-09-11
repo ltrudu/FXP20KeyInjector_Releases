@@ -1,29 +1,142 @@
-*Please be aware that this library / application / sample is provided as a community project without any guarantee of support*
-=========================================================
-# This tool is not officially supported by Zebra if you have any issues, use the Issues tab of this repository.
-## As it is a personnal initiative, I'll do my best to fix issues, but I can not ensure that it will be done quickly.
+# 🏷️ FXP20 Key Injector
 
-Please, before using the tool, read the [documentation](https://github.com/ltrudu/FXP20KeyInjector_Releases/blob/master/FXP20KeyInjector-HowTo.docx?raw=true)
+[![License](https://img.shields.io/badge/License-Zebra%20EULA-blue)](https://github.com/ltrudu/FXP20KeyInjector_Releases/blob/master/EULA.txt)
+[![Platform](https://img.shields.io/badge/Platform-Windows-blue)]()
+[![Hardware](https://img.shields.io/badge/Hardware-Zebra%20FX%20Series-green)]()
 
-This tool is released under the [Zebra EULA](https://github.com/ltrudu/FXP20KeyInjector_Releases/blob/master/EULA.txt)
+> **📋 Community Project Notice**  
+> *This tool is provided as a community project without any guarantee of support. It is not officially supported by Zebra. For issues, please use the Issues tab of this repository.*
 
-Please, take the time to read the EULA before using this tool.
+---
 
-=========================================================
-# ChangeLog
-=========================================================
+## 🎯 What is FXP20 Key Injector?
 
-## 2025-09-09 :
+**FXP20 Key Injector** is a powerful Windows application that transforms your Zebra FX-series handheld devices into efficient RFID/NFC tag readers. The application automatically reads tags and injects the data directly into your active applications as keyboard input, making data collection seamless and efficient.
 
-Added a section in  the documentation to explain how to autostart the application, autoconnect to the reader and even autostart reading tags when the connection is done.
+### ✨ Key Features
 
+- 🔄 **Automatic Tag Reading**: Continuously reads RFID/NFC tags from connected Zebra devices
+- ⌨️ **Multiple Input Methods**: Keyboard injection, clipboard paste, and MQTT messaging
+- 🚀 **Auto-Startup Support**: Configure the application to start automatically with Windows  
+- 🔗 **Auto-Connect**: Automatically connect to your RFID reader on startup
+- 🎛️ **GPIO Integration**: Use hardware buttons to trigger tag reading sessions
+- 🔧 **Advanced Configuration**: Customize reading duration, duplicate filtering, and more
+- 🎯 **Duplicate Filtering**: Remove duplicate tag reads during reading sessions
+- 📊 **Real-time Feedback**: Visual indicators for connection status and tag reading activity
+- 🌐 **MQTT Support**: Professional messaging protocol for complex integrations
 
-## 2025-09-08 : 
+---
 
-Added RemoveDuplicates element in the Config.xml file.
+## 📖 Documentation
 
-This functionality works when the PerformReadingWithGPIO or HookKeyboardToStartReading is set to true.
+### 📚 Main Documentation
+- **[📋 Complete Documentation Wiki](https://github.com/ltrudu/FXP20KeyInjector_Releases/wiki/Home.md)** - Comprehensive user guide and reference
+- **[📄 Detailed PDF Manual](https://github.com/ltrudu/FXP20KeyInjector_Releases/blob/master/FXP20KeyInjector-HowTo.pdf)** - Complete technical documentation
 
-If it is set to true, it will ensure that during the PerformReadingDuration or HookKeyboardReadingDurationInMs time of reading tags, only unique tags will be reported.
+### Quick Links
 
-Any duplicate tag or re-read tags during this period of reading will be filtered.
+- 🚀 **[Installation Guide](https://github.com/ltrudu/FXP20KeyInjector_Releases/wiki/Installation)**
+- ⚙️ **[Configuration Guide](https://github.com/ltrudu/FXP20KeyInjector_Releases/wiki/Configuration)**
+- 🖥️ **[User Interface Guide](https://github.com/ltrudu/FXP20KeyInjector_Releases/wiki/User-Interface)**
+- 🛠️ **[Setup & Connection](https://github.com/ltrudu/FXP20KeyInjector_Releases/wiki/Setup)**
+- 🌐 **[MQTT Integration](https://github.com/ltrudu/FXP20KeyInjector_Releases/wiki/MQTT)**
+- 🔧 **[Troubleshooting](https://github.com/ltrudu/FXP20KeyInjector_Releases/wiki/Troubleshooting)**
+
+---
+
+## 🛠️ Quick Installation
+
+### Prerequisites
+- 📱 Zebra FXP20 Reader
+- 💻 Windows 10/11
+- 🔗 USB connection to the FXP20 Reader
+- ⚡ .NET Framework 4.8+
+
+### Installation Steps
+1. **Download** the latest FXP20KeyInjector.7z from releases
+2. **Extract** to your desired location  
+3. **Run** FXP20KeyInjector.exe
+4. **Configure** your device connection
+5. **Start** reading tags!
+
+---
+
+## 🔧 Core Functionality
+
+### Keyboard Wedge Mode
+The application acts as a keyboard wedge, automatically typing RFID tag data into any active Windows application. Perfect for:
+- 📝 Form filling
+- 📦 Inventory management systems
+
+### MQTT Mode  
+Professional messaging protocol support for enterprise integration:
+- 🔗 Connect to MQTT brokers
+- 📡 Send tag data to multiple applications
+- 🎛️ Remote control capabilities
+- 🏢 Enterprise system integration
+
+### GPIO Control
+Use physical hardware buttons on your Zebra device:
+- ▶️ Start/stop reading with button press
+- ⏱️ Configurable reading durations
+- 🔄 Hands-free operation
+
+---
+
+## 📜 License & Legal
+
+This software is licensed under the **Zebra End User License Agreement (EULA)**.
+
+📄 **[Read the Complete EULA](https://github.com/ltrudu/FXP20KeyInjector_Releases/blob/master/EULA.txt)**
+
+### Important Notes
+- ⚠️ **Community project** - no official Zebra support
+- 🔒 Software is **licensed, not sold**
+- 🏢 For **Zebra hardware use only**
+- 📋 **Must accept EULA before use**
+
+---
+
+## 📈 Recent Updates
+
+### 🆕 Latest Version (September 9, 2025)
+- ➕ **Auto-startup configuration** - Start with Windows
+- 🔗 **Enhanced auto-connect** - Seamless device connection
+- 🎯 **Auto-start reading** - Begin scanning immediately after connection
+- 📚 **Comprehensive documentation** updates
+
+### 🔧 Previous Updates (September 8, 2025)
+- ✨ **NEW**: `RemoveDuplicates` feature in Config.xml
+- 🔄 Enhanced duplicate filtering during GPIO and keyboard-triggered reading
+- ⏱️ Improved reading session management
+- 🎛️ Better hardware GPIO integration
+
+---
+
+## 🤝 Support & Contributing
+
+### Getting Help
+1. 📖 Check the [Wiki](https://github.com/ltrudu/FXP20KeyInjector_Releases/wiki/Home.md)
+2. 🔍 Search existing [Issues](https://github.com/ltrudu/FXP20KeyInjector_Releases/issues)
+3. 🆕 Create a new issue with detailed information
+
+### Contributing
+- 🐛 **Report bugs** via GitHub Issues
+- 💡 **Suggest features** and improvements
+- 📖 **Help improve documentation**
+- ⭐ **Star the repository** to show support
+
+---
+
+## ⚡ Quick Start
+
+1. **📥 Download** and extract the application
+2. **🔌 Connect** your Zebra FX device
+3. **▶️ Run** FXP20KeyInjector.exe as Administrator
+4. **⚙️ Configure** connection settings via GUI
+5. **📋 Open** your target application
+6. **🏷️ Start scanning** - tag data appears automatically!
+
+---
+
+*📞 For Zebra hardware support, contact Zebra Technologies directly. For application issues, use this repository's Issues section.*
