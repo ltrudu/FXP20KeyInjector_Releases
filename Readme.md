@@ -31,7 +31,8 @@
 
 ### 📚 Main Documentation
 - **[📋 Complete Documentation Wiki](https://github.com/ltrudu/FXP20KeyInjector_Releases/blob/master/wiki/Home.md)** - Comprehensive user guide and reference
-- **[📄 Detailed DocX Manual with Interactive Links](https://github.com/ltrudu/FXP20KeyInjector_Releases/blob/master/FXP20KeyInjector-HowTo.docx?raw=true)** - **[📄 Detailed PDF Manual](https://github.com/ltrudu/FXP20KeyInjector_Releases/blob/master/FXP20KeyInjector-HowTo.pdf)** - Complete technical documentation
+- **[📄 Detailed DocX Manual with Interactive Links](https://github.com/ltrudu/FXP20KeyInjector_Releases/blob/master/FXP20KeyInjector-HowTo.docx?raw=true)** 
+- **[📄 Detailed PDF Manual](https://github.com/ltrudu/FXP20KeyInjector_Releases/blob/master/FXP20KeyInjector-HowTo.pdf)** - Complete technical documentation
 
 ### Quick Links
 
