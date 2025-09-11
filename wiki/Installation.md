@@ -7,7 +7,7 @@ This guide will walk you through installing and setting up FXP20 Key Injector on
 ## 📋 Prerequisites
 
 ### Hardware Requirements
-- 📱 **Zebra FX-series handheld device** (FX7500, FX9600, etc.)
+- 📱 **Zebra FXP20 Device
 - 💻 **Windows PC** with USB 2.0+ ports
 - 🔌 **USB cable** or network connection to connect the FX device
 
