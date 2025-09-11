@@ -124,10 +124,10 @@ If you plan to use MQTT mode, you'll need a broker:
 
 After successful installation:
 
-1. 📖 **[Read the User Interface Guide](User-Interface)** to understand all features
-2. ⚙️ **[Configure Advanced Settings](Configuration)** for your specific needs
-3. 🎯 **[Set up Auto-Startup](Auto-Startup)** for production use
-4. 🌐 **[Explore MQTT Integration](MQTT)** for enterprise scenarios
+1. 📖 **[Read the User Interface Guide](User-Interface.md)** to understand all features
+2. ⚙️ **[Configure Advanced Settings](Configuration.md)** for your specific needs
+3. 🎯 **[Set up Auto-Startup](Auto-Startup.md)** for production use
+4. 🌐 **[Explore MQTT Integration](MQTT.md)** for enterprise scenarios
 
 ---
 
@@ -135,7 +135,7 @@ After successful installation:
 
 If you encounter issues during installation:
 
-1. 🔍 **Check [Troubleshooting Guide](Troubleshooting)**
+1. 🔍 **Check [Troubleshooting Guide](Troubleshooting.md)**
 2. 📋 **Search [Existing Issues](https://github.com/ltrudu/FXP20KeyInjector_Releases/issues)**
 3. 🆕 **[Create New Issue](https://github.com/ltrudu/FXP20KeyInjector_Releases/issues/new)** with:
    - Your Windows version
