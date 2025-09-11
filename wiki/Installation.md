@@ -79,7 +79,7 @@ If you plan to use MQTT mode, you'll need a broker:
 1. Download [Mosquitto MQTT](https://mosquitto.org/download/)
 2. Install with default settings
 3. Add Mosquitto to your system PATH
-4. See [Mosquitto Setup Guide](Mosquitto-Setup) for detailed configuration
+4. See [Mosquitto Setup Guide](Mosquitto-Setup.md) for detailed configuration
 
 ### Option 2: Cloud MQTT Services
 - AWS IoT Core
