@@ -268,11 +268,11 @@ The FXP20 Key Injector interface is organized into several logical sections for 
 
 ## 🔗 Related Topics
 
-- **[Configuration Guide](Configuration)** - Advanced Config.xml settings
-- **[Setup Guide](Setup)** - Connection and device configuration
-- **[Troubleshooting](Troubleshooting)** - Common UI issues and solutions
-- **[MQTT Integration](MQTT)** - MQTT protocol configuration
+- **[Configuration Guide](Configuration.md)** - Advanced Config.xml settings
+- **[Setup Guide](Setup.md)** - Connection and device configuration
+- **[Troubleshooting](Troubleshooting.md)** - Common UI issues and solutions
+- **[MQTT Integration](MQTT.md)** - MQTT protocol configuration
 
 ---
 
-*Having UI issues? Check our [Troubleshooting Guide](Troubleshooting) or return to [Home](Home).*
+*Having UI issues? Check our [Troubleshooting Guide](Troubleshooting.md) or return to [Home](Home).*
